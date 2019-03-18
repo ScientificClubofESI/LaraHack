@@ -21,12 +21,14 @@ Route::post('/store', 'HackerController@store')->name('store');
 
 Route::post('/check', 'HackerController@checkCode')->name('check');
 
-Route::get('/admin','HackerController@index')->name('dashboard')->middleware('auth');
-
 Route::get('/admin/login','Auth\LoginController@showLoginForm')->name('login');
 
 Route::post('/admin/login','Auth\LoginController@login')->name('authenticate');
 
 Route::post('/admin/logout', 'Auth\LoginController@logout')->name('logout');
 
-Route::post('/admin/setDecision','HackerController@setDecision')->name('setDecision')->middleware('auth');
+Route::get('/admin','AdminController@dashboard')->name('dashboard')->middleware('auth');
+
+Route::get('/statistics','AdminController@statistics')->name('statistics')->middleware('auth');
+
+Route::post('/admin/setDecision','AdminController@setDecision')->name('setDecision')->middleware('auth');
