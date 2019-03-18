@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Hacker;
-use App\Mail\RegistrationDone;
+use App\Http\Requests\CheckCodeRequest;
+use App\Http\Requests\RegistrationRequest;
+use App\Http\Requests\SetDecisionRequest;
 use App\Team;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -44,10 +46,10 @@ class HackerController extends Controller
     /**
      * Store the hacker
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param RegistrationRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RegistrationRequest $request)
     {
         try {
             $hacker = new Hacker();
@@ -103,7 +105,7 @@ class HackerController extends Controller
      * Check if the code is correct , returning the id and the name if correct
      * @return false|string
      */
-    public function checkCode(Request $request)
+    public function checkCode(CheckCodeRequest $request)
     {
         $code = $request->request->get('teamCode');
         $team = DB::table('teams')->where('code', '=', $code)->first();
@@ -116,7 +118,7 @@ class HackerController extends Controller
      * Setting the decision for a hacker , it can be either accepter , rejected or to the waiting list
      * @return \Illuminate\Http\JsonResponse
      */
-    public function setDecision(Request $request)
+    public function setDecision(SetDecisionRequest $request)
     {
         $hacker_id = $request->request->get('id');
         $hacker = Hacker::find($hacker_id);
@@ -128,5 +130,5 @@ class HackerController extends Controller
         ]);
 
     }
-    
+
 }

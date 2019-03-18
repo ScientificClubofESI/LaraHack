@@ -30,7 +30,12 @@ class RegistrationRequest extends FormRequest
             "email"=>"required|email",
             "sex"=>[Rule::in('male','female')],
             "birthday"=>"required|date",
-
+            "phone"=>"regex:(^0[567][0-9]{10}$)", //Change the regex with your country phone numbers
+            "motivation"=>"required|min:20",
+            "github"=>"required",
+            "linked_in"=>"required",
+            "skills"=>"required|min:20",
+            "size"=>[Rule::in('S','M','L','XL')],
         ];
     }
 }
