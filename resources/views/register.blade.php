@@ -10,14 +10,19 @@
 @section('content')
     <div class="container">
         <div class="home-title">
-            <div class="row justify-content-center typed">
-                <span id="hackit"></span>
+                {{-- <div class="row justify-content-center typed">
+                    <span id="hackit"></span>
+                </div> --}}
+            <div class="row not-typed">
+                <div class="col-12">
+                        <img class="logo-img" src="{{asset('images/LOGO.png')}}" alt="CSE">
+                </div>
             </div>
-            <div class="row justify-content-center not-typed">
+            {{-- <div class="row justify-content-center not-typed">
                 <span class="vvl">Hack !T</span>
-            </div>
+            </div> --}}
             <div class="row justify-content-center come">
-                <span>Challenge yourself and register in Hack!T ! The best hackathon ever .</span>
+                <span>Challenge yourself and register in Hack!T ! The biggest student hackathon .</span>
             </div>
 
         </div>
@@ -176,7 +181,7 @@
 @section('scripts')
     <script src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
     <script src="{{asset('js/bootstrap/bootstrap.min.js')}}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.9/typed.min.js"></script>
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.9/typed.min.js"></script> --}}
     <script src="{{asset('datepicker/dist/js/datepicker.min.js')}}"></script>
     <script src="{{asset('datepicker/dist/js/i18n/datepicker.en.js')}}"></script>
     <script src="{{asset('js/register.js')}}"></script>
