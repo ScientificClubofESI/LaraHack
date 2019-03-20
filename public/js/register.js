@@ -10,6 +10,10 @@ $('.inputi').focusin(function () {
     $(this).parent().fadeTo(0.2,1);
 });
 
+$('#go-ahead').click(function () {
+    $('#first_name').focus();
+})
+
 $('.inputi').focusout(function () {
     $(this).parent().fadeTo(0.2,0.6);
 });

@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('styles')
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/bootstrap/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/register.css')}}">
     <link rel="stylesheet" href="{{asset('datepicker/dist/css/datepicker.min.css')}}" rel="stylesheet" type="text/css">
@@ -22,7 +22,10 @@
                 <span class="vvl">Hack !T</span>
             </div> --}}
             <div class="row justify-content-center come">
-                <span>Challenge yourself and register in Hack!T ! The biggest student hackathon .</span>
+                <span>Challenge yourself and register in Hack!T ! <br>A few Steps from the biggest student hackathon .</span>
+            </div>
+            <div class="row justify-content-center">
+                <button id="go-ahead" class="custom-button"> Go Ahead !</button>
             </div>
 
         </div>
@@ -120,7 +123,9 @@
                     </div>
 
                     <input type="text" hidden id="team_id" name="team_id">
-
+                    {{-- <div class="formi col-lg-8">
+                        <label class="labeli" for="size">Do you have a team ?</label>
+                    </div> --}}
                     <div class="dicidi bani col-lg-12">
                         <div class="row justify-content-center">
                             <p class="float-left">Do you have a team ? </p>
@@ -149,7 +154,7 @@
                         </div>
                     </div>
 
-                    <div class="dicidi col-lg-12" id="teamName">
+                    <div class="dicidi col-lg-12" id="teamName" style="padding-bottom: 30px;">
                         <label class="labeli">Team name</label>
                         <input type="text" class="inputi" id="team_name" name="team_name"
                                placeholder="Your team's name here">
@@ -160,7 +165,7 @@
                         <div class="checkDiv">
                             <input type="text" class="inputi checkInput" id="team_code"
                                    placeholder="Your team's code here to check it ...">
-                            <button class="btn btn-outline-primary checkButton" id="check" type="button"><i
+                            <button class="custom-button checkButton" id="check" type="button"><i
                                         class="fa fa-check-circle" aria-hidden="true"></i>Check
                             </button>
                         </div>
@@ -169,7 +174,7 @@
                     </div>
 
                     <div class="dicidi col-lg-12" id="sub">
-                        <button class="btn btn-outline-primary btn-lg btn-block" id="submitButton">Submit
+                        <button class="custom-button" id="submitButton">Submit
                         </button>
                     </div>
                 </form>

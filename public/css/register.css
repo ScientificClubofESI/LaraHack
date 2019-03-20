@@ -1,7 +1,7 @@
 
 
 body{
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Karla', sans-serif;
     color: rgb(51, 51, 51);
     height: 100%;
     width: 100%;
@@ -48,7 +48,8 @@ img {
 .come{
     font-weight: 600;
     font-size: 20px;
-    line-height: 1.2;
+    line-height: 1.6;
+    text-align: center;
     margin: 5% ;
 }
 
@@ -122,7 +123,26 @@ input:-webkit-autofill:active {
     margin-bottom: 1px;
 }
 
+.custom-button {
+    background-color: rgb(2,165,220);
+    cursor: pointer;
+    white-space: nowrap;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 12px 0px;
+    min-height: 48px;
+    color: rgb(255, 255, 255);
+    outline: none;
+    border-width: 1px;
+    border-style: solid;
+    border-image: initial;
+    padding: 6px 18px 8px;
+    border-color: transparent;
+    border-radius: 4px;
+    font-size: 25px ;
+}
+.custom-button:hover {
+    background-color: rgb(46, 189, 236);
 
+}
 .checkInput{
     padding: 10px;
     float: left;
