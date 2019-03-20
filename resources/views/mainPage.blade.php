@@ -10,12 +10,20 @@
  
 @section('content')
 
-@include('layouts.navbar')
+    @include('layouts.navbar')
 
-@include('layouts.footer')
+        @include('sections.landing')
+        @include('sections.about')
+        @include('sections.challenges')
+        @include('sections.prizes')
+        @include('sections.faq')
+        @include('sections.sponsors')
+
+    @include('layouts.footer')
 
 @endsection
- 
+
+
 @section('scripts')
 
 <script src="../code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
