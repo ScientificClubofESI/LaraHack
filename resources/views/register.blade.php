@@ -181,6 +181,7 @@
     <script src="{{asset('datepicker/dist/js/i18n/datepicker.en.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
     <script src="{{asset('js/register.js')}}"></script>
+    <script src="{{asset('js/api.js')}}"></script>
     <script src="{{asset('js/typeform.js')}}"></script>
     <script src="{{asset('js/validate.js')}}"></script>
 @endsection
