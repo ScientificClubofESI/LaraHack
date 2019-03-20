@@ -259,3 +259,18 @@ a{
     display: inline-block !important;
     margin-left: 50px;
 }
+
+label.error {
+    color: red;
+    font-size: 16px;
+}
+
+p.error{
+    color: red;
+    font-size: 16px;
+}
+
+.succ{
+    color: green;
+    font-size: 16px;
+}

@@ -30,7 +30,7 @@ class RegistrationRequest extends FormRequest
             "email"=>"required|email",
             "sex"=>[Rule::in('male','female')],
             "birthday"=>"required|date",
-            "phone"=>"regex:(^0[567][0-9]{10}$)", //Change the regex with your country phone numbers
+            "phone"=>"required", //You can set a regex right here
             "motivation"=>"required|min:20",
             "github"=>"required",
             "linked_in"=>"required",
