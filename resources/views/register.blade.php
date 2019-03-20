@@ -1,10 +1,28 @@
-@extends('layouts.app')
+@extends('layouts.default')
+
+@section('styles')
+    <link rel="stylesheet" href="{{asset('css/bootstrap/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/register.css')}}">
+    <link rel="stylesheet" href="{{asset('datepicker/dist/css/datepicker.min.css')}}" rel="stylesheet" type="text/css">
+@endsection
 
 @section('content')
     <div class="container">
+        <div class="home-title">
+            <div class="row justify-content-center typed">
+                <span id="hackit"></span>
+            </div>
+            <div class="row justify-content-center not-typed">
+                <span class="vvl">Hack !T</span>
+            </div>
+            <div class="row justify-content-center come">
+                <span>Challenge yourself and register in Hack!T ! The best hackathon ever .</span>
+            </div>
+
+        </div>
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div id="registrationDone" class="card">
+                <div id="registrationDone" class="card" style="color: #1b1e21">
                     <div class="card-header">Hi :)</div>
 
                     <div class="card-body">
@@ -12,122 +30,145 @@
                     </div>
                 </div>
                 <form id="register" method="POST">
-                    <h2>Register</h2>
-                    <p>Challenge your self and register for Hack !T 2K18</p>
                     @csrf
-                    <div class="form-group col-lg-12">
-                        <input type="text" class="form-control" id="first_name" name="first_name"
-                               placeholder="First Name*">
+                    <div class="formi col-lg-12">
+                        <label class="labeli" for="first_name">What's your first name ?</label>
+                        <input type="text" class="inputi" id="first_name" name="first_name"
+                               placeholder="Your name here">
+                        <div class="separator"></div>
                     </div>
 
-                    <div class="form-group col-lg-12">
-                        <input type="text" class="form-control" id="last_name" name="last_name"
-                               placeholder="Last Name*">
+                    <div class="formi col-lg-12">
+                        <label class="labeli" for="last_name">What's your last name ?</label>
+                        <input type="text" class="inputi" id="last_name" name="last_name"
+                               placeholder="Your last name here">
+                        <div class="separator"></div>
                     </div>
 
-                    <div class="form-group col-lg-12">
-                        <input type="text" class="form-control" id="email" name="email"
-                               placeholder="Email address*">
+                    <div class="formi col-lg-12">
+                        <label class="labeli" for="email">What's your email adress ?</label>
+                        <input type="text" class="inputi" id="email" name="email"
+                               placeholder="Your email address here">
+                        <div class="separator"></div>
                     </div>
 
-                    <div class="form-group col-lg-12">
-                        <input type="date" class="form-control" id="birthday" name="birthday" placeholder="Birthday*">
+                    <div class="formi col-lg-12">
+                        <label class="labeli" for="birthday">What's your birthday ?</label>
+                        <!--<input type="date" class="inputi" id="birthday" name="birthday" placeholder="Birthday*">-->
+                        <input type="text" class="inputi datepicker-here" data-language='en'>
+                        <div class="separator"></div>
                     </div>
 
-                    <div class="form-group col-lg-12">
-                        <select class="form-control col-lg-6" id="sex" name="sex">
-                            <option value="" disabled selected>Gender:</option>
+                    <div class="formi col-lg-12">
+                        <label class="labeli" for="sex">What's your gender ?</label>
+                        <select class="inputi" id="sex" name="sex">
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                         </select>
+                        <div class="separator"></div>
                     </div>
 
-                    <div class="form-group col-lg-12">
-                        <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone number*">
+                    <div class="formi col-lg-12">
+                        <label class="labeli" for="phone">What's your phone number ?</label>
+                        <input type="text" class="inputi" id="phone" name="phone" placeholder="Your phone number here">
+                        <div class="separator"></div>
                     </div>
 
-                    <div class="form-group col-lg-12">
-                        <textarea type="text" class="form-control" id="motivation" name="motivation"
-                                  placeholder="Motivation*"></textarea>
+                    <div class="formi col-lg-12">
+                        <label class="labeli" for="motivation">Why do you want to participate in hackIT?</label>
+                        <textarea type="text" rows=6 class="inputi" id="motivation" name="motivation"
+                                  placeholder="Motivation"></textarea>
+                        <div class="separator"></div>
                     </div>
 
-                    <div class="form-group col-lg-12">
-                        <input type="text" class="form-control" id="github" name="github" placeholder="Github*">
+                    <div class="formi col-lg-12">
+                        <label class="labeli" for="github">We need you github !</label>
+                        <input type="text" class="inputi" id="github" name="github"
+                               placeholder="your github profile's link here">
+                        <div class="separator"></div>
                     </div>
 
-                    <div class="form-group col-lg-12">
-                        <input type="text" class="form-control" id="linked_in" name="linked_in" placeholder="LinkedIn*">
+                    <div class="formi col-lg-12">
+                        <label class="labeli" for="linked_in">And your linkedIn too !</label>
+                        <input type="text" class="inputi" id="linked_in" name="linked_in"
+                               placeholder="your linkedIn profile's link here">
+                        <div class="separator"></div>
                     </div>
 
-                    <div class="form-group col-lg-12">
-                        <textarea type="text" class="form-control" id="skills" name="skills"
-                                  placeholder="Skills*"></textarea>
+                    <div class="formi col-lg-12">
+                        <label class="labeli" for="skills">What about your skills ?</label>
+                        <textarea rows=6 type="text" class="inputi" id="skills" name="skills"
+                                  placeholder="Skills"></textarea>
+                        <div class="separator"></div>
                     </div>
 
-                    <div class="form-group col-lg-12">
-                        <select class="form-control col-lg-6" id="size" name="size">
-                            <option value="" disabled selected>Size :</option>
+                    <div class="formi col-lg-8">
+                        <label class="labeli" for="size">You want a t-shirt right ! which size ?</label>
+                        <select class="inputi" id="size" name="size">
                             <option value="XL">XL</option>
                             <option value="L">L</option>
                             <option value="M">M</option>
                             <option value="S">S</option>
                         </select>
+                        <div class="separator"></div>
                     </div>
 
                     <input type="text" hidden id="team_id" name="team_id">
 
-                    <div class="row">
-                        <div class="col-lg-12">
+                    <div class="dicidi bani col-lg-12">
+                        <div class="row justify-content-center">
                             <p class="float-left">Do you have a team ? </p>
-                            <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
-                                <label class="btn btn-secondary" id="yesTeam">
-                                    <input type="radio" autocomplete="off"> Yes
-                                </label>
-                                <label class="btn btn-secondary" id="noTeam">
-                                    <input type="radio" autocomplete="off"> No
-                                </label>
-                            </div>
-
-
                         </div>
-                    </div>
-                    <br>
-                    <br>
-                    <div class="row">
-                        <div class="col-lg-12" id="createJoin">
-                            <p class="float-left">Do you want to create a team or join one ?</p>
-                            <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
-                                <label class="btn btn-secondary" id="createTeam">
-                                    <input type="radio"  autocomplete="off"> Create
-                                </label>
-                                <label class="btn btn-secondary " id="joinTeam">
-                                    <input type="radio"  autocomplete="off" > Join
-                                </label>
+                        <div class="row justify-content-between">
+                            <div class="switch">
+                                <input type="radio" name="choice"  checked>
+                                <label class="labelYN" for="yes" id="yesTeam">Yes</label>
+                                <input type="radio" name="choice" >
+                                <label class="labelYN" for="no" id="noTeam">No</label>
+                                <span class="switchFilter"></span>
                             </div>
                         </div>
                     </div>
-                    <br>
-                    <br>
-                    <div class="form-group col-lg-12" id="teamName">
-                        <input type="text" class="form-control" id="team_name" name="team_name"
-                               placeholder="Team's name">
-                    </div>
-                    <br>
-                    <br>
-                    <div class="input-group mb-3" id="teamCode">
-                        <input type="text" class="form-control" id="team_code" placeholder="Team's code" >
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" id="check" type="button">Check</button>
+
+                    <div class="dicidi col-lg-12" id="createJoin">
+                        <div class="row justify-content-between">
+                            <p>Do you want to create a team or join one ?</p>
                         </div>
-                        <br>
+                        <div class="row justify-content-between">
+                            <a role="button" class="button" id="createTeam">Create</a>
+                            <a role="button" class="button" id="joinTeam">Join</a>
+                        </div>
+                        <!--<div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
+                            <label class="btn btn-secondary" id="createTeam">
+                                <input type="radio" autocomplete="off"> Create
+                            </label>
+                            <label class="btn btn-secondary " id="joinTeam">
+                                <input type="radio" autocomplete="off"> Join
+                            </label>
+                        </div>-->
+                    </div>
+                    <div class="dicidi col-lg-12" id="teamName">
+                        <label class="labeli">Team name</label>
+                        <input type="text" class="inputi" id="team_name" name="team_name"
+                               placeholder="Your team's name here">
+                        <div class="separator"></div>
+                    </div>
+                    <div class="dicidi col-lg-12" id="teamCode">
+                        <label class="labeli">Team's code</label>
+                        <div class="checkDiv">
+                            <input type="text" class="inputi checkInput" id="team_code"
+                                   placeholder="Your team's code here to check it ...">
+                            <button class="checkButton" id="check" type="button"><i
+                                        class="fa fa-check-circle" aria-hidden="true"></i>Check
+                            </button>
+                        </div>
+                        <div class="separator"></div>
                         <div><p id="checkResult"></p></div>
                     </div>
 
-                    <br>
-                    <br>
-                    <div class="row">
-                        <div class="col-lg-12" id="sub">
-                            <button class="btn btn-outline-success float-right" id="submitButton">Submit</button>
+                    <div class="dicidi col-lg-12" id="sub">
+                        <div class="row justify-content-between">
+                            <a role="button" class="button submitButton" id="submitButton">Submit</a>
                         </div>
                     </div>
                 </form>
@@ -136,70 +177,93 @@
         </div>
     </div>
 @endsection
-@section('script')
+@section('scripts')
+    <script src="{{asset('js/jquery-3.2.1.min.js')}}" ></script>
+    <script src="{{asset('js/bootstrap/bootstrap.min.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.9/typed.min.js"></script>
+    <script src="{{asset('datepicker/dist/js/datepicker.min.js')}}"></script>
+    <script src="{{asset('datepicker/dist/js/i18n/datepicker.en.js')}}"></script>
+    <script src="{{asset('js/register.js')}}"></script>
     <script type="text/javascript">
         const token = '{{csrf_token()}}';
         $(document).ready(function () {
             $('#registrationDone').hide();
-            $('#createJoin').hide();
-            $('#sub').hide();
-            $('#teamName').hide();
-            $('#teamCode').hide();
-            $('#yesTeam').click(function () {
+            $('#createJoin').addClass('hidi');
+            $('#sub').addClass('hidi');
+            $('#teamName').addClass('hidi');
+            $('#teamCode').addClass('hidi');
+
+            $('#yesTeam').click(function (e) {
+                e.preventDefault();
                 $('#noTeam').removeClass('active');
                 $(this).addClass('active');
-                $('#sub').hide();
-                $('#createJoin').show();
+                $('#sub').addClass('hidi').removeClass('bani');
+                $('#createJoin').addClass('bani').removeClass('hidi');
             });
-            $('#noTeam').click(function () {
+
+            $('#noTeam').click(function (e) {
+                e.preventDefault();
                 $('#yesTeam').removeClass('active');
                 $(this).addClass('active');
-                $('#createJoin').hide();
-                $('#sub').show();
-                $('#teamName').hide();
-                $('#teamCode').hide();
+                $('#createJoin').addClass('hidi').removeClass('bani');
+                $('#sub').addClass('bani').removeClass('hidi');
+                $('#teamName').addClass('hidi').removeClass('bani');
+                $('#teamCode').addClass('hidi').removeClass('bani');
+
+                $('#team_code').val('');
+                $('#team_id').val('');
+                $('#team_name').val('');
             });
-            $('#createTeam').click(function () {
+
+            $('#createTeam').click(function (e) {
+                e.preventDefault();
                 $(this).addClass('active');
                 $('#joinTeam').removeClass('active');
-                $('#teamName').show();
-                $('#teamCode').hide();
-                $('#sub').show();
+                $('#teamName').addClass('bani').removeClass('hidi');
+                $('#teamCode').addClass('hidi').removeClass('bani');
+                $('#sub').addClass('bani').removeClass('hidi');
                 $('#team_code').val('');
                 $('#team_id').val('');
             });
-            $('#joinTeam').click(function(){
+
+            $('#joinTeam').click(function (e) {
+                e.preventDefault();
                 $(this).addClass('active');
                 $('#createTeam').removeClass('active');
-                $('#teamName').hide();
-                $('#teamCode').show();
+                $('#teamName').addClass('hidi').removeClass('bani');
+                $('#teamCode').addClass('bani').removeClass('hidi');
                 $('#team_name').val('');
             });
+
             $('#check').click(function () {
-                var code=$('#team_code').val();
+                var code = $('#team_code').val();
                 $.ajax({
                     headers: {'X-CSRF-TOKEN': token},
                     type: "POST",
                     url: "{{route('check')}}",
                     dataType: 'json',
-                    data: 'teamCode='+code,
-                    success:function (data) {
-                        if (data.error==null){
-                            $('#checkResult').text('Hi :p your team\'s name is:'+data.team_name);
+                    data: 'teamCode=' + code,
+                    success: function (data) {
+                        if (data.error == null) {
+                            $('#checkResult').text('Hi :p your team\'s name is:' + data.team_name);
                             $('#team_id').val(data.id);
-                            $('#sub').show();
+                            $('#sub').addClass('bani').removeClass('hidi');
+
                         }
                         else {
                             $('#checkResult').text(data.error);
-                            $('#sub').hide();
+                            $('#sub').addClass('hidi').removeClass('bani');
                         }
+
                     },
-                    error:function (response) {
+                    error: function (response) {
                         $('#checkResult').text('Hi :p error ');
-                        $('#sub').hide();
+                        $('#sub').addClass('hidi').removeClass('bani');
                     }
+
                 })
             });
+
             $('#register').on('submit', function (event) {
                 event.preventDefault();
                 $('#submitButton').off('click');
@@ -231,10 +295,12 @@
                         $('#registrationDone').show();
                         $('#statement').text('Error');
                     }
+
                 })
             });
         });
     </script>
+
 
 
 @endsection
