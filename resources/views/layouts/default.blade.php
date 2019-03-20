@@ -21,7 +21,7 @@
     <meta property="og:url" content="index.html" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="HackIT" />
-    <meta property="og:description" content="Algiers's big student hackathon" />
+    <meta property="og:description" content="{{ config('app.description', 'Laravel') }}" />
     <meta property="og:image" content="images/LOGO.png" />
 
 
@@ -32,9 +32,10 @@
     <meta name="twitter:description" content="Algiers's big student hackathon">
     <meta name="twitter:image:src" content="images/LOGO.png">
     <meta name="twitter:image:width" content="312">
-    <meta name="twitter:image:height" content="141"> @yield('styles')
+    <meta name="twitter:image:height" content="141"> 
+        @yield('styles')
 
-    <link rel="shortcut icon" href="images/LOGO.png">
+    {{-- <link rel="shortcut icon" href="images/LOGO.png"> --}}
 
 </head>
 

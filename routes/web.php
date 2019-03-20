@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function (){
-    return view('mainPage');
+    return view('main');
 });
 
 Route::get('/register', 'HackerController@create')->name('register');
