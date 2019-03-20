@@ -224,6 +224,7 @@
                 $('#createTeam').removeClass('active');
                 $('#teamName').addClass('hidi').removeClass('bani');
                 $('#teamCode').addClass('bani').removeClass('hidi');
+                $('#sub').addClass('hidi').removeClass('bani');
                 $('#team_name').val('');
             });
 
