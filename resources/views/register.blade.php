@@ -1,6 +1,7 @@
 @extends('layouts.default')
 
 @section('styles')
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/bootstrap/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/register.css')}}">
     <link rel="stylesheet" href="{{asset('datepicker/dist/css/datepicker.min.css')}}" rel="stylesheet" type="text/css">
@@ -121,9 +122,9 @@
                         </div>
                         <div class="row justify-content-between">
                             <div class="switch">
-                                <input type="radio" name="choice"  checked>
+                                <input type="radio" name="choice" id="yes">
                                 <label class="labelYN" for="yes" id="yesTeam">Yes</label>
-                                <input type="radio" name="choice" >
+                                <input type="radio" name="choice" id="no">
                                 <label class="labelYN" for="no" id="noTeam">No</label>
                                 <span class="switchFilter"></span>
                             </div>
@@ -131,22 +132,18 @@
                     </div>
 
                     <div class="dicidi col-lg-12" id="createJoin">
-                        <div class="row justify-content-between">
+                        <div class="row justify-content-center">
                             <p>Do you want to create a team or join one ?</p>
                         </div>
-                        <div class="row justify-content-between">
-                            <a role="button" class="button" id="createTeam">Create</a>
-                            <a role="button" class="button" id="joinTeam">Join</a>
+                        <div class="switch">
+                            <input type="radio" name="choice2" id="create">
+                            <label class="labelYN" for="create" id="createTeam">Create</label>
+                            <input type="radio" name="choice2" id="join">
+                            <label class="labelYN" for="join" id="joinTeam">Join</label>
+                            <span class="switchFilter"></span>
                         </div>
-                        <!--<div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
-                            <label class="btn btn-secondary" id="createTeam">
-                                <input type="radio" autocomplete="off"> Create
-                            </label>
-                            <label class="btn btn-secondary " id="joinTeam">
-                                <input type="radio" autocomplete="off"> Join
-                            </label>
-                        </div>-->
                     </div>
+
                     <div class="dicidi col-lg-12" id="teamName">
                         <label class="labeli">Team name</label>
                         <input type="text" class="inputi" id="team_name" name="team_name"
@@ -158,7 +155,7 @@
                         <div class="checkDiv">
                             <input type="text" class="inputi checkInput" id="team_code"
                                    placeholder="Your team's code here to check it ...">
-                            <button class="checkButton" id="check" type="button"><i
+                            <button class="btn btn-outline-primary checkButton" id="check" type="button"><i
                                         class="fa fa-check-circle" aria-hidden="true"></i>Check
                             </button>
                         </div>
@@ -167,9 +164,8 @@
                     </div>
 
                     <div class="dicidi col-lg-12" id="sub">
-                        <div class="row justify-content-between">
-                            <a role="button" class="button submitButton" id="submitButton">Submit</a>
-                        </div>
+                        <button class="btn btn-outline-primary btn-lg btn-block" id="submitButton">Submit
+                        </button>
                     </div>
                 </form>
 
@@ -178,7 +174,7 @@
     </div>
 @endsection
 @section('scripts')
-    <script src="{{asset('js/jquery-3.2.1.min.js')}}" ></script>
+    <script src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
     <script src="{{asset('js/bootstrap/bootstrap.min.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.9/typed.min.js"></script>
     <script src="{{asset('datepicker/dist/js/datepicker.min.js')}}"></script>
@@ -194,7 +190,7 @@
             $('#teamCode').addClass('hidi');
 
             $('#yesTeam').click(function (e) {
-                e.preventDefault();
+                //e.preventDefault();
                 $('#noTeam').removeClass('active');
                 $(this).addClass('active');
                 $('#sub').addClass('hidi').removeClass('bani');
@@ -202,7 +198,7 @@
             });
 
             $('#noTeam').click(function (e) {
-                e.preventDefault();
+                //e.preventDefault();
                 $('#yesTeam').removeClass('active');
                 $(this).addClass('active');
                 $('#createJoin').addClass('hidi').removeClass('bani');
@@ -216,7 +212,7 @@
             });
 
             $('#createTeam').click(function (e) {
-                e.preventDefault();
+                //e.preventDefault();
                 $(this).addClass('active');
                 $('#joinTeam').removeClass('active');
                 $('#teamName').addClass('bani').removeClass('hidi');
@@ -227,7 +223,7 @@
             });
 
             $('#joinTeam').click(function (e) {
-                e.preventDefault();
+                //e.preventDefault();
                 $(this).addClass('active');
                 $('#createTeam').removeClass('active');
                 $('#teamName').addClass('hidi').removeClass('bani');

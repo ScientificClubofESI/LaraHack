@@ -1,3 +1,5 @@
+
+
 body{
     font-family: 'Nunito', sans-serif;
     color: black;
@@ -25,7 +27,7 @@ body{
 }
 
 .vvl{
-    color: #ff6194;
+    color: #007bff;
 }
 .typed{
     font-weight: 600;
@@ -85,12 +87,12 @@ option {
 }
 
 .separator{
-    background-color: #ff6194;
+    background-color: #007bff;
     width: 100%;
     height: 0px;
     border: 2px;
     border-style: solid;
-    border-color: #ff6194;
+    border-color: #007bff;
     border-radius: 5px;
 }
 
@@ -105,14 +107,10 @@ input:-webkit-autofill:active {
 .checkButton{
     float: left;
     width: 20%;
-    background: #ff6194;
-    border-radius: 100px;
     padding: 8px ;
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    text-align: center ;
+    margin-bottom: 1px;
 }
+
 
 .checkInput{
     padding: 10px;
@@ -139,7 +137,7 @@ a{
 .switchFilter {
     width: 0;
     display: inline-block;
-    background-color: #DB6576;
+    background-color: #007bff;
     position: absolute;
     left: 0;
     opacity: 0;
@@ -163,6 +161,7 @@ a{
     -moz-transition: all 0.4s;
     transition: all 0.4s;
     margin-right: 10px;
+    margin-bottom: 0 !important;
 }
 
 .switch {
@@ -183,9 +182,11 @@ a{
     position: absolute;
     height: 100%;
 }
+
+
 .switch input[type="radio"]#yes:checked ~ label[for="yes"] {
     color: white;
-    border: 1px solid #DB6576;
+    border: 1px solid #007bff;
 }
 .switch input[type="radio"]#yes:checked ~ .switchFilter {
     left: 0;
@@ -194,9 +195,30 @@ a{
 }
 .switch input[type="radio"]#no:checked ~ label[for="no"] {
     color: white;
-    border: 1px solid #DB6576;
+    border: 1px solid #007bff;
 }
 .switch input[type="radio"]#no:checked ~ .switchFilter {
+    left: 100px;
+    width: 87px;
+    opacity: 1;
+}
+
+/*******************************/
+
+.switch input[type="radio"]#create:checked ~ label[for="create"] {
+    color: white;
+    border: 1px solid #007bff;
+}
+.switch input[type="radio"]#create:checked ~ .switchFilter {
+    left: 0;
+    opacity: 1;
+    width: 87px;
+}
+.switch input[type="radio"]#join:checked ~ label[for="join"] {
+    color: white;
+    border: 1px solid #007bff;
+}
+.switch input[type="radio"]#join:checked ~ .switchFilter {
     left: 100px;
     width: 87px;
     opacity: 1;
