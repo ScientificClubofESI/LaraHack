@@ -254,3 +254,8 @@ a{
     width: 87px;
     opacity: 1;
 }
+
+.custom-switch {
+    display: inline-block !important;
+    margin-left: 50px;
+}
