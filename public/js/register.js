@@ -1,10 +1,3 @@
-// var typed = new Typed('#hackit', {
-//         strings: ["^1000 ","Find ^500 !T"," ", "Solve ^500 !T"," ","Share ^500 !T"],
-//         typeSpeed: 20,
-//         loop:true,
-//         loopCount:Infinity
-//     }
-// );
 
 $('.inputi').focusin(function () {
     $(this).parent().fadeTo(0.2, 1);
@@ -28,7 +21,6 @@ $('.inputi').focus(function () {
 });
 
 
-/** Validation */
 
 
 

@@ -175,8 +175,6 @@
 @section('scripts')
     <script src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
     <script src="{{asset('js/bootstrap/bootstrap.min.js')}}"></script>
-    {{--
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.9/typed.min.js"></script> --}}
     <script src="{{asset('datepicker/dist/js/datepicker.min.js')}}"></script>
     <script src="{{asset('datepicker/dist/js/i18n/datepicker.en.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>

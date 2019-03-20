@@ -208,38 +208,4 @@ $(document).ready(function () {
         }
     });
 
-    /*$('#register').on('submit', function (event) {
-        event.preventDefault();
-        $('#submitButton').off('click');
-        console.log($(this).serialize());
-        $.ajax({
-            headers: {'X-CSRF-TOKEN': token},
-            type: "POST",
-            url: "{-{route('store')}}",
-            dataType: 'json',
-            data: $('#register').serialize(),
-            beforeSend: function () {
-                $(document.body).css({'cursor': 'wait'});
-            },
-            success: function (data) {
-                $(document.body).css({'cursor': 'default'});
-                $('#register').hide();
-                $('#registrationDone').show();
-                if (data.code != null) {
-                    $('#statement').text(data.success + ' Your team\'s name is :' + data.name + ' Your team\'s code is : ' + data.code);
-                }
-                else {
-                    $('#statement').text(data.success);
-                }
-                console.log(data);
-            },
-            error: function (response) {
-                $(document.body).css({'cursor': 'default'});
-                $('#register').hide();
-                $('#registrationDone').show();
-                $('#statement').text('Error');
-            }
-
-        });
-    });*/
 });
