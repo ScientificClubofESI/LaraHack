@@ -10,7 +10,7 @@ $('#check').click(function () {
         data: 'teamCode=' + code,
         success: function (data) {
             if (data.error == null) {
-                $('#checkResult').text('Nice , your team\'s name is:' + data.team_name).addClass('succ').removeClass('error');
+                $('#checkResult').text('Nice , your team\'s name is : ' + data.team_name).addClass('succ').removeClass('error');
                 $('#team_id').val(data.id);
                 $('#sub').addClass('bani').removeClass('hidi');
 

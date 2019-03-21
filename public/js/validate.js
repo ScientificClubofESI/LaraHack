@@ -186,18 +186,20 @@ $(document).ready(function () {
                 success: function (data) {
                     $(document.body).css({ 'cursor': 'default' });
                     $('#register').hide();
+                    $('#hideFinal').hide();
                     $('#registrationDone').show();
                     if (data.code != null) {
-                        $('#statement').text('Registration done ! Your team\'s name is : ' + data.name + ' Your team\'s code is : ' + data.code + ' Keep that code secret and share it only with your teammates!');
+                        $('#statement').append('Registration done ! Your team\'s name is : <p style="color: green"> ' + data.name + ' </p> Your team\'s code is : <p style="color: red">' + data.code + '</p> Share it only with your teammates ! ');
                     }
                     else {
-                        $('#statement').text('Registration done !');
+                        $('#statement').append('Registration done !');
                     }
                     console.log(data);
                 },
                 error: function (response) {
                     $(document.body).css({ 'cursor': 'default' });
                     $('#register').hide();
+                    $('#hideFinal').hide();
                     $('#registrationDone').show();
                     $('#statement').text('That\' an unxpected error , refresh and try again !');
                 }
