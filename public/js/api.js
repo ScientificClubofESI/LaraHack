@@ -5,7 +5,7 @@ $('#check').click(function () {
     $.ajax({
         headers: {'X-CSRF-TOKEN': token},
         type: "POST",
-        url: "{{route('check')}}",
+        url: checkRoute,
         dataType: 'json',
         data: 'teamCode=' + code,
         success: function (data) {

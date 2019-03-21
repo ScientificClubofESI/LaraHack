@@ -1,5 +1,3 @@
-
-const token = '{{csrf_token()}}';
 $(document).ready(function () {
 
 
@@ -179,7 +177,7 @@ $(document).ready(function () {
             $.ajax({
                 headers: { 'X-CSRF-TOKEN': token },
                 type: "POST",
-                url: "{{route('store')}}",
+                url: storeRoute,
                 dataType: 'json',
                 data: $('#register').serialize(),
                 beforeSend: function () {
