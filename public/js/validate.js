@@ -181,7 +181,8 @@ $(document).ready(function () {
                 dataType: 'json',
                 data: $('#register').serialize(),
                 beforeSend: function () {
-                    $(document.body).css({ 'cursor': 'wait' });
+                    // $(document.body).css({ 'cursor': 'wait' });
+                    $('#submitButton').html('<svg class="spinner" width="20px" height="20px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg"> <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle> </svg>');
                 },
                 success: function (data) {
                     $(document.body).css({ 'cursor': 'default' });
@@ -189,7 +190,7 @@ $(document).ready(function () {
                     $('#hideFinal').hide();
                     $('#registrationDone').show();
                     if (data.code != null) {
-                        $('#statement').append('Registration done ! Your team\'s name is : <p style="color: green"> ' + data.name + ' </p> Your team\'s code is : <p style="color: red">' + data.code + '</p> Share it only with your teammates ! ');
+                        $('#statement').append('Registration done ! Your team\'s name is : <span style="color: #02A5DC ;"> ' + data.name + ' </span> <br> Your team\'s code is : <span style="color: #02A5DC ; ">' + data.code + '</span><br> Share it only with your teammates ! ');
                     }
                     else {
                         $('#statement').append('Registration done !');
