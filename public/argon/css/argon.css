@@ -10007,11 +10007,11 @@ button.bg-darker:focus
     margin-right: 6rem !important;
 }
 
-.mb-7,
+/* .mb-7,
 .my-7
 {
     margin-bottom: 6rem !important;
-}
+} */
 
 .ml-7,
 .mx-7
@@ -10020,7 +10020,7 @@ button.bg-darker:focus
 }
 
 .m-8
-{
+{   
     margin: 8rem !important;
 }
 
@@ -10545,12 +10545,12 @@ button.bg-darker:focus
 {
     padding: 6rem !important;
 }
-
+/* 
 .pt-7,
 .py-7
 {
     padding-top: 6rem !important;
-}
+} */
 
 .pr-7,
 .px-7
@@ -13407,21 +13407,21 @@ button.bg-darker:focus
     {
         padding: 8rem !important;
     }
-    .pt-lg-8,
+    /* .pt-lg-8,
     .py-lg-8
     {
         padding-top: 8rem !important;
-    }
+    } */
     .pr-lg-8,
     .px-lg-8
     {
         padding-right: 8rem !important;
     }
-    .pb-lg-8,
+    /* .pb-lg-8,
     .py-lg-8
     {
         padding-bottom: 8rem !important;
-    }
+    } */
     .pl-lg-8,
     .px-lg-8
     {
@@ -15047,6 +15047,7 @@ button.bg-lighter:focus
 .bg-gradient-primary
 {
     background: linear-gradient(87deg, #5e72e4 0, #825ee4 100%) !important;
+
 }
 
 .bg-gradient-secondary
@@ -15399,11 +15400,11 @@ button.section-darker:focus
 {
     background-color: black !important;
 }
-
+ 
 .bg-gradient-primary
 {
     background: linear-gradient(87deg, #5e72e4 0, #825ee4 100%) !important;
-}
+} 
 
 .bg-gradient-secondary
 {

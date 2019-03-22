@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+@include('layouts.navbars.navbar')
+
     @include('layouts.headers.cards')
     
     <div class="container-fluid mt--7">
