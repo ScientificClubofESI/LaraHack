@@ -30,7 +30,10 @@ class AdminController extends Controller
         return view('dashboard', ['hackers' => $hackers]);
     }
 
-
+    public function dashboard2()
+    {
+        return view('dashboard-argon');
+    }
     /**
      * @param Request $request
      * Setting the decision for a hacker , it can be either accepter , rejected or to the waiting list

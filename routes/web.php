@@ -15,19 +15,26 @@ Route::get('/', function (){
     return view('main');
 });
 
+Route::get('/home', function(){
+    return view('main');
+})->name('home');
+
 Route::get('/register', 'HackerController@create')->name('register');
+
 
 Route::post('/store', 'HackerController@store')->name('store');
 
 Route::post('/check', 'HackerController@checkCode')->name('check');
 
-Route::get('/admin/login','Auth\LoginController@showLoginForm')->name('login');
+Route::get('/admin/login','Auth\LoginController@showForm')->name('login') ; 
 
 Route::post('/admin/login','Auth\LoginController@login')->name('authenticate');
 
 Route::post('/admin/logout', 'Auth\LoginController@logout')->name('logout');
 
-Route::get('/admin','AdminController@dashboard')->name('dashboard')->middleware('auth');
+Route::get('/admin2','AdminController@dashboard')->name('dashboard2')->middleware('auth');
+
+Route::get('/admin','AdminController@dashboard2')->name('dashboard')->middleware('auth');
 
 Route::get('/statistics','AdminController@statistics')->name('statistics')->middleware('auth');
 
