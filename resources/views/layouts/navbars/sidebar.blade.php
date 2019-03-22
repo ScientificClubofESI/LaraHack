@@ -79,24 +79,24 @@
             <!-- Navigation -->
             <ul class="navbar-nav">
                     <li class="nav-item">
-                            <a class="nav-link" href="{{ route('home') }}">
+                            <a class="nav-link" href="{{ route('statistics') }}">
                                     <i class="text-primary ni fas fa-chart-line"></i> {{ __('Statistics') }}
                             </a>
                     </li>
                     <li class="nav-item">
-                            <a class="nav-link" href="{{ route('home') }}">
+                            <a class="nav-link" href="{{ route('hackers') }}">
                                     <i class="text-yellow ni fas fa-users"></i> {{ __('Hackers') }}
                             </a>
                     </li>
                     
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home') }}">
+                        <a class="nav-link" href="{{ route('mailing') }}">
                                 <i class="text-orange ni fas fa-envelope"></i> {{ __('Mailing Tool') }}
                             </a>
                         </li>
                         
                         <li class="nav-item">
-                                <a class="nav-link" href="{{ route('home') }}">
+                                <a class="nav-link" href="{{ route('settings') }}">
                                         <i class="text-red ni ni-settings"></i> {{ __('Settings') }}
                                 </a>
                         </li>
