@@ -10239,12 +10239,6 @@ button.bg-darker:focus
     padding-right: 3rem !important;
 }
 
-.pb-5,
-.py-5
-{
-    /* padding-bottom: 3rem !important; */
-}
-
 .pl-5,
 .px-5
 {
@@ -14682,7 +14676,7 @@ a.text-neutral:focus
 
 .text-darker
 {
-    color: rgb(51, 51, 51); !important;
+    color: rgb(51, 51, 51) !important;
 }
 
 a.text-darker:hover,

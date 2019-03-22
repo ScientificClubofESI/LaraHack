@@ -5,3 +5,19 @@
 .icon-cnt{
     width: 40px;
 }
+
+
+.navbar-vertical .navbar-nav .nav-link > svg {
+    font-size: .9375rem;
+    line-height: 1.5rem;
+    min-width: 2.25rem;
+}
+
+.nav-link svg.ni {
+    position: relative;
+    top: 2px;
+}
+
+.container {
+    margin-top: 50px;
+}
