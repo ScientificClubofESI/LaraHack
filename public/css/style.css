@@ -240,6 +240,7 @@ background-color: #555;
     font-weight: 700;
     font-size: 1.6rem;
     background: black ; 
+    background-clip : text ; 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -795,6 +796,7 @@ background-color: #555;
 .footer-title{
     font-weight: 600;
     background: black ; 
+    background-clip : text ; 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 24px;
