@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
-@push('css')
+@section('styles')
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.16/r-2.2.1/datatables.min.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.16/b-1.5.1/b-html5-1.5.1/datatables.min.css"/>
     <link rel="stylesheet" type="text/css" href="{{asset('css/hackers.css')}}">
-@endpush
+@endsection
 
 @section('content')
     <div class="container-fluid mt--7">

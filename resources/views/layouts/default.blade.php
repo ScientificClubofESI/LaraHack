@@ -33,6 +33,8 @@
     <meta name="twitter:image:src" content="images/LOGO.png">
     <meta name="twitter:image:width" content="312">
     <meta name="twitter:image:height" content="141"> 
+    <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+
         @yield('styles')
 
     {{-- <link rel="shortcut icon" href="images/LOGO.png"> --}}
