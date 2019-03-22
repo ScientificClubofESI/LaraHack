@@ -228,7 +228,7 @@ a
 {
     text-decoration: none;
 
-    color: #5e72e4;
+    color: rgb(2,165,220);
     background-color: transparent;
 
     -webkit-text-decoration-skip: objects;
@@ -237,7 +237,7 @@ a:hover
 {
     text-decoration: none; 
 
-    color: #233dd2;
+    color: rgb(46, 189, 236);
 }
 
 a:not([href]):not([tabindex])
@@ -10242,7 +10242,7 @@ button.bg-darker:focus
 .pb-5,
 .py-5
 {
-    padding-bottom: 3rem !important;
+    /* padding-bottom: 3rem !important; */
 }
 
 .pl-5,
@@ -14698,7 +14698,7 @@ a.text-darker:focus
 
 .text-muted
 {
-    color: #8898aa !important;
+    color: black !important;
 }
 
 .text-black-50
@@ -17934,12 +17934,12 @@ a.btn-icon-only
 .footer .nav .nav-item .nav-link,
 .footer .footer-link
 {
-    color: #8898aa !important;
+    color: black !important;
 }
 .footer .nav .nav-item .nav-link:hover,
 .footer .footer-link:hover
 {
-    color: #525f7f !important;
+    color: gray !important;
 }
 .footer .list-unstyled li a
 {
@@ -18895,11 +18895,11 @@ textarea[resize='horizontal']
 
 .nav-link
 {
-    color: #525f7f;
+    color: black;
 }
 .nav-link:hover
 {
-    color: #5e72e4;
+    color: gray;
 }
 .nav-link i.ni
 {

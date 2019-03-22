@@ -1,5 +1,5 @@
 div .col-lg-5 {
-    margin-top: 5rem !important;
+    margin-top: 3rem !important;
 }
 
 body {
@@ -40,4 +40,9 @@ body {
 .btn {
     background-color: rgb(2,165,220);
     border-color: transparent;
+}
+.btn:hover {
+    background-color: rgb(46, 189, 236);
+    border-color: transparent;
+
 }
