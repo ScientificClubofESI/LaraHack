@@ -11,15 +11,15 @@ body {
 }
 
 .text-black {
-    color : black ; 
+    color : rgb(51, 51, 51); ; 
 }
 
 .form-control {
-    color : black ;
+    color : rgb(51, 51, 51); ;
 }
 
 .form-control:focus {
-    color : black ;
+    color : rgb(51, 51, 51); ;
 }
 
 .card-profile-image img
@@ -29,12 +29,12 @@ body {
 
 .focused .input-group-text
 {
-    color : black ;
+    color : rgb(51, 51, 51); ;
 }
 
 .focused .input-group-text
 {
-    color : black ;
+    color : rgb(51, 51, 51); ;
 }
 
 .btn {

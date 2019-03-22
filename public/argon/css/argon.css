@@ -14682,7 +14682,7 @@ a.text-neutral:focus
 
 .text-darker
 {
-    color: black !important;
+    color: rgb(51, 51, 51); !important;
 }
 
 a.text-darker:hover,
@@ -17934,7 +17934,7 @@ a.btn-icon-only
 .footer .nav .nav-item .nav-link,
 .footer .footer-link
 {
-    color: black !important;
+    color: rgb(51, 51, 51) !important;
 }
 .footer .nav .nav-item .nav-link:hover,
 .footer .footer-link:hover
@@ -18895,7 +18895,7 @@ textarea[resize='horizontal']
 
 .nav-link
 {
-    color: black;
+    color: rgb(51, 51, 51);
 }
 .nav-link:hover
 {
