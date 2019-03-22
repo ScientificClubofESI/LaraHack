@@ -1,162 +1,290 @@
 @extends('layouts.app')
 
-@section('styles')
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.16/r-2.2.1/datatables.min.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.16/b-1.5.1/b-html5-1.5.1/datatables.min.css"/>
-    <link rel="stylesheet" type="text/css" href="{{asset('css/dashboard.css')}}">
-@endsection
-
 @section('content')
+    @include('layouts.navbars.navbar')
+    @include('layouts.headers.cards')
+
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-10">
-                <table id="Hackers" class="display dataTable dtr-inline collapsed" width="100%">
-                    <thead>
-                    <tr>
-                        <th>Team</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Birthday</th>
-                        <th>Sex</th>
-                        <th>Size</th>
-
-                        <th>E-mail</th>
-                        <th>Phone</th>
-                        <th>Github</th>
-                        <th>LinkedIn</th>
-
-                        <th>Skills</th>
-                        <th>Motivation</th>
-                        <th hidden>Decision</th>
-
-                        <th>Take a decision</th>
-
-
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach($hackers as $hacker)
-                        <tr id="{{$hacker->id}}">
-
-
-                            @if(isset($hacker->team_name))
-                                <td>{{$hacker->team_name }}</td>
-                            @else
-                                <td></td>
-                            @endif
-
-                            <td>{{$hacker->first_name }}</td>
-                            <td>{{$hacker->last_name }}</td>
-                            <td>{{$hacker->birthday }}</td>
-                            <td>{{$hacker->sex }}</td>
-                            <td>{{$hacker->size }}</td>
-
-                            <td>{{$hacker->email }}</td>
-                            <td>{{$hacker->phone_number }}</td>
-
-                            <td>
-                                <a href="{{$hacker->github }}" target="_blank">
-                                    <img class="icon-cnt"
-                                         src="{{asset("img/icon/github.png")}}" alt="Github">
-                                </a>
-                                {{$hacker->github }}
-                            </td>
-                            <td>
-                                <a href="{{$hacker->linked_in }}" target="_blank">
-                                    <img class="icon-cnt"
-                                         src="{{asset("img/icon/linkedin.png")}}"
-                                         alt="LinkedIn">
-                                </a>
-                                {{$hacker->linked_in }}
-                            </td>
-
-                            <td>{{$hacker->skills }}</td>
-                            <td>{{$hacker->motivation }}</td>
-                            <td hidden>{{$hacker->decision}}</td>
-
-
-                            <td>
-                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                    <label class="btn btn-light @if($hacker->decision=='accepted') active @endif " onclick="setdecision(this,'{{$hacker->id}}','accepted')" >
-                                        <input type="radio" name="options" id="accepted" autocomplete="off" @if($hacker->decision=='accepted') checked @endif> Accept
-                                    </label>
-                                    <label class="btn btn-light @if($hacker->decision=='waiting_list') active @endif" onclick="setdecision(this,'{{$hacker->id}}','waiting_list')">
-                                        <input type="radio" name="options" id="waiting" autocomplete="off" @if($hacker->decision=='waiting') checked @endif> To waiting list
-                                    </label>
-                                    <label class="btn btn-light @if($hacker->decision=='rejected') active @endif" onclick="setdecision(this,'{{$hacker->id}}','rejected')">
-                                        <input type="radio" name="options" id="rejected" autocomplete="off" @if($hacker->decision=='refused') checked @endif> reject
-                                    </label>
-                                </div>
-                            </td>
-
-
-                        </tr>
-                    @endforeach
-                    </tbody>
-                    <tfoot></tfoot>
-                </table>
+        <div class="row">
+            <div class="col-xl-8 mb-5 mb-xl-0">
+                <div class="card bg-gradient-default shadow">
+                    <div class="card-header bg-transparent">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h6 class="text-uppercase text-light ls-1 mb-1">Overview</h6>
+                                <h2 class="text-white mb-0">Sales value</h2>
+                            </div>
+                            <div class="col">
+                                <ul class="nav nav-pills justify-content-end">
+                                    <li class="nav-item mr-2 mr-md-0" data-toggle="chart" data-target="#chart-sales" data-update='{"data":{"datasets":[{"data":[0, 20, 10, 30, 15, 40, 20, 60, 60]}]}}' data-prefix="$" data-suffix="k">
+                                        <a href="#" class="nav-link py-2 px-3 active" data-toggle="tab">
+                                            <span class="d-none d-md-block">Month</span>
+                                            <span class="d-md-none">M</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" data-toggle="chart" data-target="#chart-sales" data-update='{"data":{"datasets":[{"data":[0, 20, 5, 25, 10, 30, 15, 40, 40]}]}}' data-prefix="$" data-suffix="k">
+                                        <a href="#" class="nav-link py-2 px-3" data-toggle="tab">
+                                            <span class="d-none d-md-block">Week</span>
+                                            <span class="d-md-none">W</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <!-- Chart -->
+                        <div class="chart">
+                            <!-- Chart wrapper -->
+                            <canvas id="chart-sales" class="chart-canvas"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4">
+                <div class="card shadow">
+                    <div class="card-header bg-transparent">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h6 class="text-uppercase text-muted ls-1 mb-1">Performance</h6>
+                                <h2 class="mb-0">Total orders</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <!-- Chart -->
+                        <div class="chart">
+                            <canvas id="chart-orders" class="chart-canvas"></canvas>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+        <div class="row mt-5">
+            <div class="col-xl-8 mb-5 mb-xl-0">
+                <div class="card shadow">
+                    <div class="card-header border-0">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h3 class="mb-0">Page visits</h3>
+                            </div>
+                            <div class="col text-right">
+                                <a href="#!" class="btn btn-sm btn-primary">See all</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <!-- Projects table -->
+                        <table class="table align-items-center table-flush">
+                            <thead class="thead-light">
+                            <tr>
+                                <th scope="col">Page name</th>
+                                <th scope="col">Visitors</th>
+                                <th scope="col">Unique users</th>
+                                <th scope="col">Bounce rate</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row">
+                                    /argon/
+                                </th>
+                                <td>
+                                    4,569
+                                </td>
+                                <td>
+                                    340
+                                </td>
+                                <td>
+                                    <i class="fas fa-arrow-up text-success mr-3"></i> 46,53%
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    /argon/index.html
+                                </th>
+                                <td>
+                                    3,985
+                                </td>
+                                <td>
+                                    319
+                                </td>
+                                <td>
+                                    <i class="fas fa-arrow-down text-warning mr-3"></i> 46,53%
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    /argon/charts.html
+                                </th>
+                                <td>
+                                    3,513
+                                </td>
+                                <td>
+                                    294
+                                </td>
+                                <td>
+                                    <i class="fas fa-arrow-down text-warning mr-3"></i> 36,49%
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    /argon/tables.html
+                                </th>
+                                <td>
+                                    2,050
+                                </td>
+                                <td>
+                                    147
+                                </td>
+                                <td>
+                                    <i class="fas fa-arrow-up text-success mr-3"></i> 50,87%
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    /argon/profile.html
+                                </th>
+                                <td>
+                                    1,795
+                                </td>
+                                <td>
+                                    190
+                                </td>
+                                <td>
+                                    <i class="fas fa-arrow-down text-danger mr-3"></i> 46,53%
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4">
+                <div class="card shadow">
+                    <div class="card-header border-0">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h3 class="mb-0">Social traffic</h3>
+                            </div>
+                            <div class="col text-right">
+                                <a href="#!" class="btn btn-sm btn-primary">See all</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <!-- Projects table -->
+                        <table class="table align-items-center table-flush">
+                            <thead class="thead-light">
+                            <tr>
+                                <th scope="col">Referral</th>
+                                <th scope="col">Visitors</th>
+                                <th scope="col"></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row">
+                                    Facebook
+                                </th>
+                                <td>
+                                    1,480
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <span class="mr-2">60%</span>
+                                        <div>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-gradient-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    Facebook
+                                </th>
+                                <td>
+                                    5,480
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <span class="mr-2">70%</span>
+                                        <div>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    Google
+                                </th>
+                                <td>
+                                    4,807
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <span class="mr-2">80%</span>
+                                        <div>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-gradient-primary" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    Instagram
+                                </th>
+                                <td>
+                                    3,678
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <span class="mr-2">75%</span>
+                                        <div>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-gradient-info" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    twitter
+                                </th>
+                                <td>
+                                    2,645
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <span class="mr-2">30%</span>
+                                        <div>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-gradient-warning" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{-- @include('layouts.footers.auth') --}}
     </div>
 @endsection
 
-@section('script')
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/r-2.2.1/datatables.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.16/b-1.5.1/b-html5-1.5.1/datatables.min.js"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
-
-    <script type="text/javascript">
-        'use strict';
-        const token='{{csrf_token()}}';
-        function setdecision(element,member_id,decision) {
-
-            let formData=new FormData();
-            formData.append('_token',token);
-            formData.append('id',member_id);
-            formData.append('decision',decision);
-            $.ajax({
-                headers:{'X-CSRF-TOKEN': token},
-                type:"POST",
-                url:"{{route('setDecision')}}",
-                dataType:'json',
-                data:formData,
-                contentType:false,
-                processData:false,
-                beforeSend: function () {
-                    $(document.body).css({'cursor': 'wait'});
-                },
-                success: function (json) {
-                    //set the changes
-                    if (json.response) {
-
-                    }
-                    $(document.body).css({'cursor': 'default'});
-                },
-                error: function (response) {
-
-                    if (response.status === 401) //redirect if not authenticated user.
-                        window.location = '/errors/401';
-                    else if (response.status === 422) {
-                    } else {
-                    }
-                    $(document.body).css({'cursor': 'default'});
-                }
-            })
-        }
-    </script>
-
-    <script type="text/javascript">
-        $('#Hackers').DataTable({
-            responsive: true,
-            dom: 'Bfrtip',
-            buttons: [
-                'excel', 'pdf', 'csv'
-            ]
-        });
-    </script>
-@endsection
+@push('js')
+    <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.min.js"></script>
+    <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>
+@endpush
