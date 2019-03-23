@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19caf663-442d-4c66-a37c-a46a532074cc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HackerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HackerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Mail/Accepted.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/Accepted.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Mail/Rejected.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/Rejected.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Mail/Waiting.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/Waiting.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/mail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MailingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MailingController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +47,7 @@
           <entry key="css" value="260" />
           <entry key="env" value="76" />
           <entry key="js" value="124" />
-          <entry key="php" value="6336" />
+          <entry key="php" value="6370" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -60,18 +56,18 @@
           <entry key="Blade" value="2949" />
           <entry key="CSS" value="260" />
           <entry key="JavaScript" value="124" />
-          <entry key="PHP" value="3387" />
+          <entry key="PHP" value="3421" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MailingController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="38" column="17" lean-forward="true" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
+            <state relative-caret-position="100">
+              <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
               <folding>
                 <element signature="e#40#55#0#PHP" expanded="true" />
               </folding>
@@ -97,11 +93,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HackerController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="72" column="57" lean-forward="true" selection-start-line="72" selection-start-column="16" selection-end-line="72" selection-end-column="57" />
+            <state relative-caret-position="195">
+              <caret line="98" column="5" lean-forward="true" selection-start-line="98" selection-start-column="5" selection-end-line="98" selection-end-column="5" />
               <folding>
                 <element signature="e#40#55#0#PHP" expanded="true" />
               </folding>
@@ -165,14 +161,14 @@
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/resources/views/emails/waiting.blade.php" />
         <option value="$PROJECT_DIR$/routes/console.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/MailingController.php" />
         <option value="$PROJECT_DIR$/config/mail.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/HackerController.php" />
         <option value="$PROJECT_DIR$/app/Mail/Accepted.php" />
         <option value="$PROJECT_DIR$/app/Mail/Rejected.php" />
         <option value="$PROJECT_DIR$/app/Mail/Waiting.php" />
         <option value="$PROJECT_DIR$/app/Mail/Registred.php" />
         <option value="$PROJECT_DIR$/resources/views/emails/registration.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/HackerController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/MailingController.php" />
       </list>
     </option>
   </component>
@@ -381,12 +377,12 @@
       <option name="presentableId" value="Default" />
       <updated>1552857682893</updated>
       <workItem from="1552857685348" duration="20077000" />
-      <workItem from="1553078349376" duration="61632000" />
+      <workItem from="1553078349376" duration="63526000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81709000" />
+    <option name="totallyTimeSpent" value="83603000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="27" width="1299" height="741" extended-state="6" />
@@ -394,9 +390,9 @@
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info id="npm" order="1" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.27773345" />
+      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.27773345" />
       <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="0" visible="true" weight="0.32119206" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="0" visible="true" weight="0.45033112" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
@@ -718,6 +714,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HackerController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="98" column="5" lean-forward="true" selection-start-line="98" selection-start-column="5" selection-end-line="98" selection-end-column="5" />
+          <folding>
+            <element signature="e#40#55#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/emails/registration.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -734,18 +740,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MailingController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="38" column="17" lean-forward="true" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
-          <folding>
-            <element signature="e#40#55#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HackerController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="72" column="57" lean-forward="true" selection-start-line="72" selection-start-column="16" selection-end-line="72" selection-end-column="57" />
+        <state relative-caret-position="100">
+          <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
           <folding>
             <element signature="e#40#55#0#PHP" expanded="true" />
           </folding>

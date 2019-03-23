@@ -18,8 +18,9 @@ class MailingController extends Controller
             ->select('email as email','first_name as name')
             ->get();
 
-        Mail::to($acceptedHackers)->send(new Accepted());
+        Mail::bcc($acceptedHackers)->send(new Accepted());
     }
+
 
     public function sendEmailsRejected(){
         $rejectedHackers = DB::table('hackers')
@@ -27,7 +28,7 @@ class MailingController extends Controller
             ->select('email as email','first_name as name')
             ->get();
 
-        Mail::to($rejectedHackers)->send(new Rejected());
+        Mail::bcc($rejectedHackers)->send(new Rejected());
     }
 
     public function sendEmailsWaiting(){
@@ -36,6 +37,6 @@ class MailingController extends Controller
             ->select('email as email','first_name as name')
             ->get();
 
-        Mail::to($waitingHackers)->send(new Waiting());
+        Mail::bcc($waitingHackers)->send(new Waiting());
     }
 }
