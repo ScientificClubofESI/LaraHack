@@ -1,15 +1,19 @@
 @extends('layouts.app')
 
 @section('styles')
+    <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
     <link href="{{asset('css/statistics')}}">
 @endsection
 
 @section('content')
-    <div class="container">
-        <div id="carouselExampleControls" class="carousel slide mt-5" data-ride="carousel">
+    <div class="container pt-3 pb-7 bg-default">
+        <div class="row justify-content-center pb-3">
+            <h1 class="text-white font-weight-900 text-xl">Statistics</h1>
+        </div>
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <div class="row justify-content-around mb-5">
+                    <div class="row justify-content-around">
                         <div class="col-lg-9">
                             <div class="card">
                                 <div class="card-body">
@@ -27,7 +31,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <div class="row justify-content-around mb-5">
+                    <div class="row justify-content-around">
                         <div class="col-lg-9">
                             <div class="card">
                                 <div class="card-body">
@@ -45,7 +49,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <div class="row justify-content-around mb-5">
+                    <div class="row justify-content-around">
                         <div class="col-lg-9">
                             <div class="card">
                                 <div class="card-body">
@@ -63,7 +67,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <div class="row justify-content-around mb-5">
+                    <div class="row justify-content-around">
                         <div class="col-lg-9">
                             <div class="card">
                                 <div class="card-body">
@@ -95,9 +99,8 @@
 @endsection
 
 @push('js')
-    <!--<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>-->
-    <script src="{{asset('argon/vendor/chart.js/dist/Chart.min.js')}}"></script>
-    <script src="{{asset('argon/vendor/chart.js/dist/Chart.extension.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
     <script>
         const ctx1 = document.getElementById('myChart1').getContext('2d');
         const ctx2 = document.getElementById('myChart2').getContext('2d');
@@ -111,51 +114,39 @@
                 datasets: [{
                     label: "My First Dataset",
                     data: [{{$decision_chart['accepted']}},{{$decision_chart['rejected']}}, {{$decision_chart['waiting']}},{{$decision_chart['not_yet']}}],
-                    backgroundColor: ["#f1fdf3", "#e5f4e7", "#d1e9d2", "#99cda9"]
+                    backgroundColor: ["#070d59", "#1f3c88", "#5893d4", "#f7b633"]
                 }]
             }
         });
 
 
         const chart2 = new Chart(ctx2, {
-            // The type of chart we want to create
             type: 'pie',
-
-            // The data for our dataset
             data: {
                 labels: ["XL", "L", "M", "S"],
                 datasets: [{
                     data: [{{$size_chart['XL']}},{{$size_chart['XL']}},{{$size_chart['XL']}},{{$size_chart['XL']}}],
-                    backgroundColor: ["#048998", "#3bb4c1", "#e9e4e6", "#f6f5f5"]
+                    backgroundColor: ["#33313b", "#62374e", "#007880", "#fdc57b"]
                 }]
             },
-
-            // Configuration options go here
-            options: {}
+            options: {
+            }
         });
 
         const chart3 = new Chart(ctx3, {
-            // The type of chart we want to create
             type: 'pie',
-
-            // The data for our dataset
             data: {
                 labels: ["Male", "Female"],
                 datasets: [{
                     data: [{{$gender_chart['male']}}, {{$gender_chart['female']}}],
-                    backgroundColor: ["#ffa1ac", "#b7fbff"]
+                    backgroundColor: ["#10316b", "#cf3030"]
                 }]
             },
-
-            // Configuration options go here
             options: {}
         });
 
         const chart4 = new Chart(ctx4, {
-            // The type of chart we want to create
             type: 'line',
-
-            // The data for our dataset
             data: {
                 labels: [
                     @foreach(array_keys($inscription_date_chart) as $date)
@@ -164,8 +155,8 @@
                 ],
                 datasets: [{
                     label: 'Inscription per day',
-                    backgroundColor: '#87c0cd',
-                    borderColor: '#87c0cd',
+                    backgroundColor: '#6927ff',
+                    borderColor: '#bf81ff',
                     data: [
                         @foreach($inscription_date_chart as $value)
                             '{{$value}}',
@@ -173,10 +164,7 @@
                     ]
                 }]
             },
-
-            // Configuration options go here
             options: {}
-
         });
     </script>
 @endpush
