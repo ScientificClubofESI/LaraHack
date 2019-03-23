@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('styles')
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.16/r-2.2.1/datatables.min.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.16/b-1.5.1/b-html5-1.5.1/datatables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.16/b-1.5.1/b-html5-1.5.1/datatables.min.css"/> 
     <link rel="stylesheet" type="text/css" href="{{asset('css/hackers.css')}}">
 @endsection
 
@@ -11,26 +11,26 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-10">
-                <table id="Hackers" class="display dataTable dtr-inline collapsed" width="100%">
-                    <thead>
+                <table id="Hackers" class="display dataTable collapsed" width="100%">
+                    <thead class="thead-light">
                     <tr>
-                        <th>Team</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Birthday</th>
-                        <th>Sex</th>
-                        <th>Size</th>
+                        <th scope="col">Team</th>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Birthday</th>
+                        <th scope="col">Sex</th>
+                        <th scope="col">Size</th>
 
-                        <th>E-mail</th>
-                        <th>Phone</th>
-                        <th>Github</th>
-                        <th>LinkedIn</th>
+                        <th scope="col">E-mail</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">Github</th>
+                        <th scope="col">LinkedIn</th>
 
-                        <th>Skills</th>
-                        <th>Motivation</th>
+                        <th scope="col">Skills</th>
+                        <th scope="col">Motivation</th>
                         <th hidden>Decision</th>
 
-                        <th>Take a decision</th>
+                        <th scope="col">Take a decision</th>
 
 
                     </tr>
@@ -41,7 +41,7 @@
 
 
                             @if(isset($hacker->team_name))
-                                <td>{{$hacker->team_name }}</td>
+                                <td >{{$hacker->team_name }}</td>
                             @else
                                 <td></td>
                             @endif
@@ -57,18 +57,14 @@
 
                             <td>
                                 <a href="{{$hacker->github }}" target="_blank">
-                                    <img class="icon-cnt"
-                                         src="{{asset("img/icon/github.png")}}" alt="Github">
-                                </a>
                                 {{$hacker->github }}
+                                </a>
                             </td>
                             <td>
                                 <a href="{{$hacker->linked_in }}" target="_blank">
-                                    <img class="icon-cnt"
-                                         src="{{asset("img/icon/linkedin.png")}}"
-                                         alt="LinkedIn">
+                                    {{$hacker->linked_in }}
                                 </a>
-                                {{$hacker->linked_in }}
+                                
                             </td>
 
                             <td>{{$hacker->skills }}</td>
@@ -78,13 +74,13 @@
 
                             <td>
                                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                    <label class="btn btn-light @if($hacker->decision=='accepted') active @endif " onclick="setdecision(this,'{{$hacker->id}}','accepted')" >
+                                    <label class="btn btn-green @if($hacker->decision=='accepted') active @endif " onclick="setdecision(this,'{{$hacker->id}}','accepted')" >
                                         <input type="radio" name="options" id="accepted" autocomplete="off" @if($hacker->decision=='accepted') checked @endif> Accept
                                     </label>
                                     <label class="btn btn-light @if($hacker->decision=='waiting_list') active @endif" onclick="setdecision(this,'{{$hacker->id}}','waiting_list')">
                                         <input type="radio" name="options" id="waiting" autocomplete="off" @if($hacker->decision=='waiting') checked @endif> To waiting list
                                     </label>
-                                    <label class="btn btn-light @if($hacker->decision=='rejected') active @endif" onclick="setdecision(this,'{{$hacker->id}}','rejected')">
+                                    <label class="btn btn-red @if($hacker->decision=='rejected') active @endif" onclick="setdecision(this,'{{$hacker->id}}','rejected')">
                                         <input type="radio" name="options" id="rejected" autocomplete="off" @if($hacker->decision=='refused') checked @endif> reject
                                     </label>
                                 </div>

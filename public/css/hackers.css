@@ -21,3 +21,12 @@
 .container {
     margin-top: 50px;
 }
+
+
+table > * {
+    font-size: 13px ; 
+}
+
+.btn-group {
+    margin-left: 150px;
+}

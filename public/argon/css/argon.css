@@ -1922,7 +1922,7 @@ pre code
 {
     padding: 1rem;
 
-    vertical-align: top;
+    /* vertical-align: top; */
 
     border-top: 1px solid #e9ecef;
 }
@@ -3241,12 +3241,92 @@ fieldset:disabled a.btn
 .show > .btn-light.dropdown-toggle
 {
     color: #fff;
-    border-color: #adb5bd; 
-    background-color: #919ca6;
+    border-color: none ; 
+    background-color: #004a9e;
 }
 .btn-light:not(:disabled):not(.disabled):active:focus,
 .btn-light:not(:disabled):not(.disabled).active:focus,
 .show > .btn-light.dropdown-toggle:focus
+{
+    box-shadow: none, 0 0 0 0 rgba(173, 181, 189, .5);
+}
+
+.btn-red
+{
+    color: #fff;
+    border-color: #adb5bd;
+    background-color: #adb5bd;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
+}
+.btn-red:hover
+{
+    color: #fff;
+    border-color: #adb5bd; 
+    background-color: #adb5bd;
+}
+.btn-red:focus,
+.btn-red.focus
+{
+    box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08), 0 0 0 0 rgba(173, 181, 189, .5);
+}
+.btn-red.disabled,
+.btn-red:disabled
+{
+    color: #fff;
+    border-color: #adb5bd; 
+    background-color: #adb5bd;
+}
+.btn-red:not(:disabled):not(.disabled):active,
+.btn-red:not(:disabled):not(.disabled).active,
+.show > .btn-red.dropdown-toggle
+{
+    color: #fff;
+    background-color: #810016;
+    border : none ; 
+}
+.btn-red:not(:disabled):not(.disabled):active:focus,
+.btn-red:not(:disabled):not(.disabled).active:focus,
+.show > .btn-red.dropdown-toggle:focus
+{
+    box-shadow: none, 0 0 0 0 rgba(173, 181, 189, .5);
+}
+
+.btn-green
+{
+    color: #fff;
+    border-color: #adb5bd;
+    background-color: #adb5bd;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
+}
+.btn-green:hover
+{
+    color: #fff;
+    border-color: #adb5bd; 
+    background-color: #adb5bd;
+}
+.btn-green:focus,
+.btn-green.focus
+{
+    box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08), 0 0 0 0 rgba(173, 181, 189, .5);
+}
+.btn-green.disabled,
+.btn-green:disabled
+{
+    color: #fff;
+    border-color: #adb5bd; 
+    background-color: #adb5bd;
+}
+.btn-green:not(:disabled):not(.disabled):active,
+.btn-green:not(:disabled):not(.disabled).active,
+.show > .btn-green.dropdown-toggle
+{
+    color: #fff;
+    background-color: #006d18;
+    border : none ; 
+}
+.btn-green:not(:disabled):not(.disabled):active:focus,
+.btn-green:not(:disabled):not(.disabled).active:focus,
+.show > .btn-green.dropdown-toggle:focus
 {
     box-shadow: none, 0 0 0 0 rgba(173, 181, 189, .5);
 }
