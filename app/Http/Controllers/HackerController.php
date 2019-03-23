@@ -6,6 +6,7 @@ use App\Hacker;
 use App\Http\Requests\CheckCodeRequest;
 use App\Http\Requests\RegistrationRequest;
 use App\Http\Requests\SetDecisionRequest;
+use App\Mail\Registred;
 use App\Team;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -54,6 +55,7 @@ class HackerController extends Controller
                 $team->code = str_random();
                 $team->save();
                 $team->hackers()->save($hacker);
+                Mail::to($hacker)->send(new Registred($team->name,$team->code));
                 return response()->json(['success' => 'Inscription done', 'code' => $team->code, 'name' => $team->name]);
 
             }
@@ -63,13 +65,14 @@ class HackerController extends Controller
                 $team_id = $request->request->get('team_id');
                 $team = Team::find($team_id);
                 $team->hackers()->save($hacker);
+                Mail::to($hacker)->send(new Registred($team->name,$team->code));
                 return response()->json(['success' => 'Inscription done', 'code' => $team->code, 'name' => $team->name]);
 
             }
 
             else {// Else, the hacker have no team
-
                 $hacker->save();
+                Mail::to($hacker)->send(new Registred());
                 return response()->json(['success' => 'Inscription done']);
             }
 

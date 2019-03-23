@@ -28,6 +28,6 @@ class Waiting extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.waiting');
+        return $this->view('emails.waiting')->subject('Waiting list !');
     }
 }

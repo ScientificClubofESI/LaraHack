@@ -7,19 +7,25 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class Accepted extends Mailable
+class Registred extends Mailable
 {
     use Queueable, SerializesModels;
+
+    public $team_name;
+    public $team_code;
 
     /**
      * Create a new message instance.
      *
-     * @return void
+     * @param $team_name
+     * @param $team_code
      */
-    public function __construct()
+    public function __construct($team_name=null,$team_code=null)
     {
-        //
+        $this->team_name = $team_name;
+        $this->team_code = $team_code;
     }
+
 
     /**
      * Build the message.
@@ -28,6 +34,6 @@ class Accepted extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.accepted')->subject('Accepted !');
+        return $this->view('emails.registration')->subject('Registration done !');
     }
 }
