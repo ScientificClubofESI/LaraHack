@@ -6,40 +6,98 @@
 
 @section('content')
     <div class="container">
-        <div class="row justify-content-around">
-            <div class="col-lg-6">
-                <canvas id="myChart1"></canvas>
-                <div class="row justify-content-center">
-                    <p class="font-weight-bold">The first chart</p>
+        <div id="carouselExampleControls" class="carousel slide mt-5" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row justify-content-around mb-5">
+                        <div class="col-lg-9">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="chart">
+                                        <!-- Chart wrapper -->
+                                        <canvas id="myChart1" class="chart-canvas"></canvas>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <h5>Decisions</h5>
+                                    <p>Shows number of accepted , rejected , waiting and not viewed yet hackers</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row justify-content-around mb-5">
+                        <div class="col-lg-9">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="chart">
+                                        <!-- Chart wrapper -->
+                                        <canvas id="myChart2" class="chart-canvas"></canvas>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <h5>T-shirts</h5>
+                                    <p>Shows number of T-shirt you must provide for each size</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row justify-content-around mb-5">
+                        <div class="col-lg-9">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="chart">
+                                        <!-- Chart wrapper -->
+                                        <canvas id="myChart3" class="chart-canvas"></canvas>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <h5>Gender</h5>
+                                    <p>Shows number of male and female hackers</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row justify-content-around mb-5">
+                        <div class="col-lg-9">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="chart">
+                                        <!-- Chart wrapper -->
+                                        <canvas id="myChart4" class="chart-canvas"></canvas>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <h5>Inscriptions</h5>
+                                    <p>Shows the amount of inscription per day </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-6">
-                <canvas id="myChart2"></canvas>
-                <div class="row justify-content-center">
-                    <p class="font-weight-bold">The second chart</p>
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-around">
-            <div class="col-lg-6">
-                <canvas id="myChart3"></canvas>
-                <div class="row justify-content-center">
-                    <p class="font-weight-bold">The third chart</p>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <canvas id="myChart4"></canvas>
-                <div class="row justify-content-center">
-                    <p class="font-weight-bold">The fourth chart</p>
-                </div>
-            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
     </div>
 
 @endsection
 
-@section('script')
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+@push('js')
+    <!--<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>-->
+    <script src="{{asset('argon/vendor/chart.js/dist/Chart.min.js')}}"></script>
+    <script src="{{asset('argon/vendor/chart.js/dist/Chart.extension.js')}}"></script>
     <script>
         const ctx1 = document.getElementById('myChart1').getContext('2d');
         const ctx2 = document.getElementById('myChart2').getContext('2d');
@@ -49,11 +107,11 @@
         const chart = new Chart(ctx1, {
             type: "doughnut",
             data: {
-                labels: ["Red", "Blue", "Yellow"],
+                labels: ["Accepted", "Rejected", "Waiting list", "Not viewed yet"],
                 datasets: [{
                     label: "My First Dataset",
-                    data: [300, 50, 100],
-                    backgroundColor: ["rgb(0, 99, 132)", "rgb(254, 162, 235)", "rgb(255, 25, 86)"]
+                    data: [{{$decision_chart['accepted']}},{{$decision_chart['rejected']}}, {{$decision_chart['waiting']}},{{$decision_chart['not_yet']}}],
+                    backgroundColor: ["#f1fdf3", "#e5f4e7", "#d1e9d2", "#99cda9"]
                 }]
             }
         });
@@ -65,11 +123,10 @@
 
             // The data for our dataset
             data: {
-                labels: ["Red", "Blue", "Yellow"],
+                labels: ["XL", "L", "M", "S"],
                 datasets: [{
-                    label: "My First Dataset",
-                    data: [300, 50, 100],
-                    backgroundColor: ["rgb(255, 99, 132)", "rgb(54, 162, 235)", "rgb(255, 205, 86)"]
+                    data: [{{$size_chart['XL']}},{{$size_chart['XL']}},{{$size_chart['XL']}},{{$size_chart['XL']}}],
+                    backgroundColor: ["#048998", "#3bb4c1", "#e9e4e6", "#f6f5f5"]
                 }]
             },
 
@@ -79,16 +136,14 @@
 
         const chart3 = new Chart(ctx3, {
             // The type of chart we want to create
-            type: 'line',
+            type: 'pie',
 
             // The data for our dataset
             data: {
-                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                labels: ["Male", "Female"],
                 datasets: [{
-                    label: 'My First dataset',
-                    backgroundColor: 'rgb(99, 132, 155)',
-                    borderColor: 'rgb(99, 132, 155)',
-                    data: [0, 10, 5, 20, 0, 30, 25]
+                    data: [{{$gender_chart['male']}}, {{$gender_chart['female']}}],
+                    backgroundColor: ["#ffa1ac", "#b7fbff"]
                 }]
             },
 
@@ -98,21 +153,30 @@
 
         const chart4 = new Chart(ctx4, {
             // The type of chart we want to create
-            type: 'bar',
+            type: 'line',
 
             // The data for our dataset
             data: {
-                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                labels: [
+                    @foreach(array_keys($inscription_date_chart) as $date)
+                        '{{$date}}',
+                    @endforeach
+                ],
                 datasets: [{
-                    label: 'My First dataset',
-                    backgroundColor: 'rgb(132, 199, 255)',
-                    borderColor: 'rgb(132, 199, 255)',
-                    data: [30, 10, 5, 25, 20, 0, 45]
+                    label: 'Inscription per day',
+                    backgroundColor: '#87c0cd',
+                    borderColor: '#87c0cd',
+                    data: [
+                        @foreach($inscription_date_chart as $value)
+                            '{{$value}}',
+                        @endforeach
+                    ]
                 }]
             },
 
             // Configuration options go here
             options: {}
+
         });
     </script>
-@endsection
+@endpush

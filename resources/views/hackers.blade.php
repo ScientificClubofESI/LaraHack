@@ -11,7 +11,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-10">
-                <table id="Hackers" class="display dataTable dtr-inline collapsed" width="100%">
+                <table id="Hackers" class="display dataTable  collapsed" width="100%">
                     <thead>
                     <tr>
                         <th>Team</th>

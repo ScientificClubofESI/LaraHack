@@ -113,8 +113,11 @@ class AdminController extends Controller
 
         $inscription_date_chart=array_count_values($dates);
 
-        dd($decisions_chart,$size_chart,$gender_chart,$inscription_date_chart);
-        return view('statistics');
+        //dd($decisions_chart,$size_chart,$gender_chart,$inscription_date_chart);
+
+        //dd(array_keys($inscription_date_chart));
+
+        return view('statistics',['decision_chart'=>$decisions_chart,'size_chart'=>$size_chart,'gender_chart'=>$gender_chart,'inscription_date_chart'=>$inscription_date_chart]);
     }
 
     /**
