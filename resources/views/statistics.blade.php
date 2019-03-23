@@ -126,7 +126,7 @@
                 labels: ["XL", "L", "M", "S"],
                 datasets: [{
                     data: [{{$size_chart['XL']}},{{$size_chart['XL']}},{{$size_chart['XL']}},{{$size_chart['XL']}}],
-                    backgroundColor: ["#33313b", "#62374e", "#007880", "#fdc57b"]
+                    backgroundColor: ["#f7de1c", "#2c3848", "#706381", "#45b7b8"]
                 }]
             },
             options: {
