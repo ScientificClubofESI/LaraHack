@@ -30,3 +30,8 @@ table > * {
 .btn-group {
     margin-left: 150px;
 }
+
+hr {
+    color : black ; 
+    width : 50% ; 
+}
