@@ -2,7 +2,7 @@
     <div class="row footer-row">
         <div class="col-12">
             <a href="#" class="footer-title">
-              HackIT
+                {{ config('app.name', 'Easy Hack') }}
             </a>
         </div>
     </div>
@@ -18,7 +18,7 @@
             Copyright ©
             <script>
                 document.write(new Date().getFullYear())
-            </script> HackIT
+            </script> {{ config('app.name', 'Easy Hack') }}
         </div>
 
         <div class="col-12">

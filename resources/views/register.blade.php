@@ -18,7 +18,7 @@
             </div>
             <div id="hideFinal">
                 <div class="row justify-content-center come">
-                    <span>Challenge yourself and register in Hack!T ! <br>A few Steps from the biggest student hackathon .</span>
+                    <span>Challenge yourself and register in {{ config('app.name', 'Easy Hack') }} ! <br>A few Steps from the biggest student hackathon .</span>
                 </div>
                 <div class="row justify-content-center">
                     <button id="go-ahead" class="custom-button"> Go Ahead !</button>

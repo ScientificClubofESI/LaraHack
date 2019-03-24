@@ -6,7 +6,7 @@
             <div class="col-md-6 col-lg-8 order-2 order-md-1">
               <div class="row about-text">
                 <div class="col-12 about-title">
-                  What is HackIT
+                  What is {{ config('app.name', 'Easy Hack') }}
                 </div>
     
                 <div class="col-12 about-contents">
