@@ -1,4 +1,6 @@
-
+body {
+    background-color: #f8f9fe;  
+}
 .action_on_hacker{
     cursor: pointer;
 }
@@ -21,7 +23,7 @@
 
 
 table > * {
-    font-size: 13px ; 
+    font-size: 20px ; 
 }
 
 .btn-group {
