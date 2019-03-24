@@ -34,3 +34,8 @@ hr {
     color : black ; 
     width : 50% ; 
 }
+
+
+li {
+    white-space: normal !important ;
+}
