@@ -22,7 +22,7 @@
 
         </div>
         <div class="col-md-10">
-            <table id="Hackers" class=" display collapsed dataTable ui celled table" width="100%">
+            <table id="Hackers" class=" display wrap collapsed dataTable ui celled table" width="100%">
                 <thead class="thead-light">
                     <tr>
                         <th scope="col">Team</th>

@@ -11,14 +11,16 @@ class Accepted extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $confirmation_link;
+
     /**
      * Create a new message instance.
      *
-     * @return void
+     * @param $confirmation_link
      */
-    public function __construct()
+    public function __construct($confirmation_link)
     {
-        //
+        $this->confirmation_link = $confirmation_link;
     }
 
     /**

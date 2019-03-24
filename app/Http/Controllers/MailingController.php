@@ -8,6 +8,7 @@ use App\Mail\Rejected;
 use App\Mail\Waiting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 
 class MailingController extends Controller
@@ -15,10 +16,16 @@ class MailingController extends Controller
     public function sendEmailsAccepted(){
         $acceptedHackers = DB::table('hackers')
             ->where('decision','=','accepted')
-            ->select('email as email','first_name as name')
+            ->select('id as id','email as email','first_name as name')
             ->get();
 
-        Mail::bcc($acceptedHackers)->send(new Accepted());
+        $token = '';
+
+        foreach ($acceptedHackers as $hacker){
+            $token = Hash::make($hacker->id.$hacker->name);
+            $link = route('confirm',['token'=>$token]);
+            Mail::to($hacker)->send(new Accepted($link));
+        }
     }
 
 
