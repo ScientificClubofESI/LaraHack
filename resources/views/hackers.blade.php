@@ -8,13 +8,13 @@
 @endsection
 
 @section('content')
-    <div class="container">
+    <div class="container  pt-3 pb-">
         <div class="row justify-content-center">
             <div class="col-md-10"> 
                 <h1 class="text-center"> Hackers </h1>
             </div>
             <div class="col-md-10"> 
-                <hr>
+                
             </div>
             <div class="col-md-10">
                 <table id="Hackers" class="display dataTable collapsed" width="100%">

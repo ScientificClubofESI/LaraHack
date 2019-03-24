@@ -2,97 +2,76 @@
 
 @section('styles')
     <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
-    <link href="{{asset('css/statistics')}}">
+    <link href="{{asset('css/statistics.css')}}" rel="stylesheet">
 @endsection
 
 @section('content')
-    <div class="container pt-3 pb-7 bg-default">
+    <div class="container pt-3 pb-7">
         <div class="row justify-content-center pb-3">
-            <h1 class="text-white font-weight-900 text-xl">Statistics</h1>
+            <h1 class="text-black font-weight-900 text-xl">Statistics</h1>
         </div>
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="row justify-content-around">
-                        <div class="col-lg-9">
-                            <div class="card">
-                                <div class="card-body">
+        <div class="row">
+                <div class="col-xl-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="h3 mb-0">Decisions</h5>
+                                <h6 class="surtitle">Shows number of accepted , rejected , waiting and not viewed yet hackers</h6>
+                            </div>
+        
+                            <div class="card-body">
                                     <div class="chart">
-                                        <!-- Chart wrapper -->
-                                        <canvas id="myChart1" class="chart-canvas"></canvas>
+                                            <canvas id="myChart1" class="chart-canvas"></canvas>
                                     </div>
-                                </div>
-                                <div class="card-footer">
-                                    <h5>Decisions</h5>
-                                    <p>Shows number of accepted , rejected , waiting and not viewed yet hackers</p>
-                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="row justify-content-around">
-                        <div class="col-lg-9">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="chart">
-                                        <!-- Chart wrapper -->
-                                        <canvas id="myChart2" class="chart-canvas"></canvas>
-                                    </div>
-                                </div>
-                                <div class="card-footer">
-                                    <h5>T-shirts</h5>
-                                    <p>Shows number of T-shirt you must provide for each size</p>
-                                </div>
-                            </div>
-                        </div>
+          
+            <div class="col-xl-6">
+                <div class="card">
+                    <div class="card-header">
+                    
+                        <h5 class="h3 mb-0">Registration</h5>
+                        <h6 class="surtitle">Shows the amount of registration per day</h6>
+
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="row justify-content-around">
-                        <div class="col-lg-9">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="chart">
-                                        <!-- Chart wrapper -->
-                                        <canvas id="myChart3" class="chart-canvas"></canvas>
-                                    </div>
-                                </div>
-                                <div class="card-footer">
-                                    <h5>Gender</h5>
-                                    <p>Shows number of male and female hackers</p>
-                                </div>
+
+                    <div class="card-body">
+                            <div class="chart">
+                                    <canvas id="myChart4" class="chart-canvas"></canvas>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="row justify-content-around">
-                        <div class="col-lg-9">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="chart">
-                                        <!-- Chart wrapper -->
-                                        <canvas id="myChart4" class="chart-canvas"></canvas>
-                                    </div>
-                                </div>
-                                <div class="card-footer">
-                                    <h5>Inscriptions</h5>
-                                    <p>Shows the amount of inscription per day </p>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+        </div>
+        <div class="row">
+                <div class="col-xl-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="h3 mb-0">Gender</h5>
+                                <h6 class="surtitle">Shows number of male and female hackers </h6>
+                            </div>
+                            <div class="card-body">
+                                    <div class="chart">
+                                            <canvas id="myChart3" class="chart-canvas"></canvas>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>  
+            <div class="col-xl-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="h3 mb-0">T-shirts</h5>
+                        <h6 class="surtitle">Shows number of T-shirt you must provide for each size</h6>
+                    </div>
+
+                    <div class="card-body">
+                            <div class="chart">
+                                    <!-- Chart wrapper -->
+                                    <canvas id="myChart2" class="chart-canvas"></canvas>
+                            </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -114,9 +93,19 @@
                 datasets: [{
                     label: "My First Dataset",
                     data: [{{$decision_chart['accepted']}},{{$decision_chart['rejected']}}, {{$decision_chart['waiting']}},{{$decision_chart['not_yet']}}],
-                    backgroundColor: ["#070d59", "#1f3c88", "#5893d4", "#f7b633"]
+                    backgroundColor: ["#006d18", "#810016", "#004a9e", "#f7b633"]
                 }]
-            }
+            }, 
+            options: {
+                maintainAspectRatio : false , 
+				legend: {
+					display : false ,
+				},
+				animation: {
+					animateScale: true,
+					animateRotate: true
+				}
+			}
         });
 
 
@@ -125,12 +114,20 @@
             data: {
                 labels: ["XL", "L", "M", "S"],
                 datasets: [{
-                    data: [{{$size_chart['XL']}},{{$size_chart['XL']}},{{$size_chart['XL']}},{{$size_chart['XL']}}],
+                    data: [{{$size_chart['XL']}},{{$size_chart['L']}},{{$size_chart['M']}},{{$size_chart['S']}}],
                     backgroundColor: ["#f7de1c", "#2c3848", "#706381", "#45b7b8"]
                 }]
             },
             options: {
-            }
+                maintainAspectRatio : false , 
+				legend: {
+					display : false ,
+				},
+				animation: {
+					animateScale: true,
+					animateRotate: true
+				}
+			}
         });
 
         const chart3 = new Chart(ctx3, {
@@ -139,10 +136,19 @@
                 labels: ["Male", "Female"],
                 datasets: [{
                     data: [{{$gender_chart['male']}}, {{$gender_chart['female']}}],
-                    backgroundColor: ["#10316b", "#cf3030"]
+                    backgroundColor: ["#3476f9", "#ff5baa"]
                 }]
             },
-            options: {}
+            options: {
+                maintainAspectRatio : false , 
+				legend: {
+					display : false ,
+				},
+				animation: {
+					animateScale: true,
+					animateRotate: true
+				}
+			}
         });
 
         const chart4 = new Chart(ctx4, {
@@ -155,8 +161,8 @@
                 ],
                 datasets: [{
                     label: 'Inscription per day',
-                    backgroundColor: '#6927ff',
-                    borderColor: '#bf81ff',
+                    backgroundColor: 'transparent',
+                    borderColor: '#004a9e',
                     data: [
                         @foreach($inscription_date_chart as $value)
                             '{{$value}}',
@@ -164,7 +170,17 @@
                     ]
                 }]
             },
-            options: {}
+            	options: {
+                    maintainAspectRatio : false , 
+                    responsive: true,
+				legend: {
+					display : false ,
+				},
+				animation: {
+					animateScale: true,
+					animateRotate: true
+				} ,
+			},
         });
     </script>
 @endpush
