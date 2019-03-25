@@ -39,4 +39,4 @@ Route::get('/admin/statistics','AdminController@statistics')->name('statistics')
 
 Route::post('/admin/setDecision','AdminController@setDecision')->name('setDecision')->middleware('auth');
 
-Route::get('/register/confirm/{token}','ConfirmController@confirmHacker')->name('confirm');
+Route::get('/register/confirm/{token}','ConfirmationsController@confirmHacker')->name('confirm');

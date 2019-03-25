@@ -32,4 +32,9 @@ class Hacker extends Model
         if ($this->team_id!=null) return true;
         else return false;
     }
+
+    public function confirmAttendance(){
+        $this->confirmed = true;
+
+    }
 }
