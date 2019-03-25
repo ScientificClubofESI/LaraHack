@@ -9,11 +9,11 @@
 
     <meta name="viewport" content="width=device-width">
     <meta name="robots" content="noindex,nofollow">
-    <!-- Begin Styles Section  --> 
+    <!-- Begin Styles Section  -->
     @include('emails.layouts.styles')
 
     <!-- End Styles Section -->
-    </head>
+</head>
 
 <body class="full-padding" cz-shortcut-listen="true">
     <table class="wrapper" cellpadding="0" cellspacing="0" role="presentation">
@@ -26,7 +26,7 @@
 
                                 <div style="margin:30px 20px 40px 20px;">
                                     <p class="title">
-                                            <img src="{{ $message->embed(public_path() . '/images/LOGO.png') }}" width="150" />
+                                        <img src="{{ $message->embed(public_path() . '/images/LOGO.png') }}" width="150" />
                                     </p>
                                 </div>
                                 <div style="margin:30px 20px 40px 20px;">

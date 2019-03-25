@@ -1,49 +1,51 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>{{ config('app.name', 'Easy Hack') }}</title>
-        <!-- Favicon -->
-        <link href="{{ asset('argon') }}/img/brand/favicon.png" rel="icon" type="image/png">
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
-        <!-- Icons -->
-        <link href="{{ asset('argon') }}/vendor/nucleo/css/nucleo.css" rel="stylesheet">
-        <!-- Argon CSS -->
-                @yield('styles')
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <link type="text/css" href="{{ asset('argon') }}/css/argon.css?v=1.0.0" rel="stylesheet">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-        
+    <title>{{ config('app.name', 'Easy Hack') }}</title>
+    <!-- Favicon -->
+    <link href="{{ asset('argon') }}/img/brand/favicon.png" rel="icon" type="image/png">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+    <!-- Icons -->
+    <link href="{{ asset('argon') }}/vendor/nucleo/css/nucleo.css" rel="stylesheet">
+    <!-- Argon CSS -->
+    @yield('styles')
 
-    </head>
-    <body class="{{ $class ?? '' }}">
-        @auth()
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                @csrf
-            </form>
-            @include('layouts.navbars.sidebar')
-        @endauth
-        
-        <div class="main-content">
-            @yield('content')
-        </div>
+    <link type="text/css" href="{{ asset('argon') }}/css/argon.css?v=1.0.0" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+        crossorigin="anonymous">
 
-        @guest()
-            @include('layouts.footers.guest')
-        @endguest
 
-        <script src="{{ asset('argon') }}/vendor/jquery/dist/jquery.min.js"></script>
-        <script src="{{ asset('argon') }}/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        
-        @stack('js')
-        
-        <!-- Argon JS -->
-        <script src="{{ asset('argon') }}/js/argon.js?v=1.0.0"></script>
-    </body>
+</head>
+
+<body class="{{ $class ?? '' }}">
+    @auth()
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        @csrf
+    </form>
+    @include('layouts.navbars.sidebar') @endauth
+
+    <div class="main-content">
+        @yield('content')
+    </div>
+
+    @guest()
+    @include('layouts.footers.guest') @endguest
+
+    <script src="{{ asset('argon') }}/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="{{ asset('argon') }}/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    @stack('js')
+
+    <!-- Argon JS -->
+    <script src="{{ asset('argon') }}/js/argon.js?v=1.0.0"></script>
+</body>
+
 </html>
