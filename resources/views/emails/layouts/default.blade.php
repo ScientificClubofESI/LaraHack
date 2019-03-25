@@ -26,8 +26,8 @@
 
                                 <div style="margin:30px 20px 40px 20px;">
                                     <p class="title">
-                                        <img src="{{asset('images/LOGO.png')}}">
-                                    </p>
+                                            <img src="{{ $message->embed(public_path() . '/images/LOGO.png') }}" width="150" />
+                                        </p>
                                 </div>
                                 <div style="margin:30px 20px 40px 20px;">
                                     <p class="title">
@@ -60,7 +60,7 @@
                                         @yield('second')
                                     </p>
                                     <p>For any questions, please visit our FAQ on our website or don't hesitate to contact us
-                                        at participants@hackjunction.com! .
+                                        at ha_zellat@esi.dz .
                                     </p>
 
                                     <p class="button-container">

@@ -30,6 +30,6 @@ class Accepted extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.accepted')->subject('Accepted !');
+        return $this->view('emails.accepted')->subject('HackIT Decision');
     }
 }

@@ -28,6 +28,6 @@ class Rejected extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.rejected')->subject('Rejected');
+        return $this->view('emails.rejected')->subject('HackIT Decision');
     }
 }
