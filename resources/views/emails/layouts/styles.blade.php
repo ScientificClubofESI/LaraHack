@@ -752,7 +752,7 @@
 
     .title {
         text-align: center;
-        font-size: 50px;
+        font-size: 30px;
         color: #2FA8EC;
         font-weight: bold;
         font-family: 'Roboto', sans-serif;
