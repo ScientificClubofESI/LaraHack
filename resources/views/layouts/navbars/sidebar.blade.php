@@ -50,12 +50,13 @@
             <!-- Navigation -->
             <ul class="navbar-nav mb-md-3">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" target="_blank" href="https://github.com/ScientificClubofESI/EasyHack/issues/new">
                         <i class="ni fas fa-question-circle"></i> Report
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('logout') }}">
+                    <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
                         <i class="ni fas fa-sign-out-alt"></i>Logout
                     </a>
                 </li>

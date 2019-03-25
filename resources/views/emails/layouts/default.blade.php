@@ -27,7 +27,7 @@
                                 <div style="margin:30px 20px 40px 20px;">
                                     <p class="title">
                                             <img src="{{ $message->embed(public_path() . '/images/LOGO.png') }}" width="150" />
-                                        </p>
+                                    </p>
                                 </div>
                                 <div style="margin:30px 20px 40px 20px;">
                                     <p class="title">
