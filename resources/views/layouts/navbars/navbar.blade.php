@@ -2,6 +2,6 @@
     @include('layouts.navbars.navs.auth')
 @endauth
     
-@guest()
+{{-- @guest()
     @include('layouts.navbars.navs.guest')
-@endguest
+@endguest --}}

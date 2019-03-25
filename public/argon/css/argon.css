@@ -63,6 +63,7 @@
 html
 {
     font-family: sans-serif;
+    font-size : 17px ; 
     line-height: 1.15;
 
     -webkit-text-size-adjust: 100%;
