@@ -194,6 +194,8 @@ $(document).ready(function () {
                     }
                     else {
                         $('#statement').append('Registration done !');
+                        //$('#registrationDone').append('<button class="custom-button fix-width" type="button"><a href="{{route("register")}}"><i class="fa fa-check-circle" aria-hidden="true"></i>Re-registration </a> </button>');
+
                     }
                     console.log(data);
                 },

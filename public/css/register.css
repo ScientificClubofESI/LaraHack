@@ -163,96 +163,6 @@ a{
     color: #fff !important;
 }
 
-.switchFilter {
-    width: 0;
-    display: inline-block;
-    background-color: #007bff;
-    position: absolute;
-    left: 0;
-    opacity: 0;
-    top: 0;
-    bottom: 0;
-    z-index: -1;
-    -webkit-transition: all 0.4s cubic-bezier(0, 0, 0.25, 1);
-    -moz-transition: all 0.4s cubic-bezier(0, 0, 0.25, 1);
-    transition: all 0.4s cubic-bezier(0, 0, 0.25, 1);
-}
-
-.labelYN {
-    cursor: pointer;
-    text-transform: uppercase;
-    border: 1px solid #3D4349;
-    width: 85px;
-    padding: 15px 0;
-    text-align: center;
-    display: inline-block;
-    -webkit-transition: all 0.4s;
-    -moz-transition: all 0.4s;
-    transition: all 0.4s;
-    margin-right: 10px;
-    margin-bottom: 0 !important;
-}
-
-.switch {
-    position: absolute;
-    display: inline-block;
-    left: 50%;
-    right: auto;
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
-    transform: translateX(-50%);
-    z-index: 1;
-    margin: 2em 0;
-}
-.switch input[type="radio"] {
-    visibility: hidden;
-    position: absolute;
-    height: 100%;
-}
-
-
-.switch input[type="radio"]#yes:checked ~ label[for="yes"] {
-    color: white;
-    border: 1px solid #007bff;
-}
-.switch input[type="radio"]#yes:checked ~ .switchFilter {
-    left: 0;
-    opacity: 1;
-    width: 87px;
-}
-.switch input[type="radio"]#no:checked ~ label[for="no"] {
-    color: white;
-    border: 1px solid #007bff;
-}
-.switch input[type="radio"]#no:checked ~ .switchFilter {
-    left: 100px;
-    width: 87px;
-    opacity: 1;
-}
-
-/*******************************/
-
-.switch input[type="radio"]#create:checked ~ label[for="create"] {
-    color: white;
-    border: 1px solid #007bff;
-}
-.switch input[type="radio"]#create:checked ~ .switchFilter {
-    left: 0;
-    opacity: 1;
-    width: 87px;
-}
-.switch input[type="radio"]#join:checked ~ label[for="join"] {
-    color: white;
-    border: 1px solid #007bff;
-}
-.switch input[type="radio"]#join:checked ~ .switchFilter {
-    left: 100px;
-    width: 87px;
-    opacity: 1;
-}
-
 .custom-switch {
     display: inline-block !important;
     margin-left: 50px;
@@ -273,7 +183,7 @@ p.error{
     font-size: 16px;
 }
 
-#submitButton {
+.fix-width {
     width: 150px;
 }
 

@@ -27,7 +27,7 @@ Route::post('/admin/login','Auth\LoginController@login')->name('authenticate');
 
 Route::post('/admin/logout', 'Auth\LoginController@logout')->name('logout');
 
-Route::get('/admin','AdminController@dashboard')->name('dashboard')->middleware('auth');
+Route::get('/admin','AdminController@index')->name('main')->middleware('auth');
 
 Route::get('/admin/hackers','AdminController@hackers')->name('hackers')->middleware('auth');
 

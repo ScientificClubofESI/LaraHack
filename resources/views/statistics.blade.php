@@ -10,6 +10,9 @@
         <div class="row justify-content-center pb-3">
             <h1 class="text-black font-weight-900 text-xl">Statistics</h1>
         </div>
+        <div class="row justify-content-center pb-3">
+            <h2 class="text-black font-weight-900 text-l">All Hackers </h2>
+        </div>
         <div class="row">
                 <div class="col-xl-6">
                         <div class="card">
@@ -42,6 +45,9 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="row justify-content-center pb-3">
+            <h2 class="text-black font-weight-900 text-l">Only Accepted Hackers </h2>
         </div>
         <div class="row">
                 <div class="col-xl-6">

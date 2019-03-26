@@ -24,7 +24,7 @@
                     <button id="go-ahead" class="custom-button"> Go Ahead !</button>
                 </div>
             </div>
-            <div id="registrationDone" class="row justify-content-center come">
+            <div id="registrationDone" style="flex-direction : column ; " class="row justify-content-center come">
                 <p id="statement"></p>
             </div>
         </div>
@@ -163,7 +163,7 @@
                     </div>
 
                     <div class="dicidi col-lg-12" id="sub">
-                        <button class="custom-button" id="submitButton">Submit 
+                        <button class="custom-button fix-width" id="submitButton">Submit 
                         </button>
                     </div>
                 </form>

@@ -12,9 +12,9 @@ class AdminController extends Controller
 
 
 
-    public function dashboard()
+    public function index()
     {
-        return view('dashboard');
+        return redirect()->route('statistics');
     }
 
     /**
