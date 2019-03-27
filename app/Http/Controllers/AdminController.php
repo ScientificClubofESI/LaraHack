@@ -43,6 +43,9 @@ class AdminController extends Controller
     }
 
     public function mailing(){
+        $hackers=Hacker::all()->where('decision','=','not_yet');
+        $number_of_not_viewed_hackers = count($hackers);
+
         $hackers=Hacker::all()->where('decision','=','accepted');
         $number_of_accepted_hackers = count($hackers);
 
@@ -51,7 +54,7 @@ class AdminController extends Controller
 
         $hackers=Hacker::all()->where('decision','=','waiting_list');
         $number_of_waiting_hackers = count($hackers);
-        return view('mailing' , ['accepted' => $number_of_accepted_hackers , 'rejected' => $number_of_rejected_hackers , 'waiting' => $number_of_waiting_hackers]);
+        return view('mailing' , ['accepted' => $number_of_accepted_hackers , 'rejected' => $number_of_rejected_hackers , 'waiting' => $number_of_waiting_hackers , 'not_yet' => $number_of_not_viewed_hackers]);
     }
 
 
