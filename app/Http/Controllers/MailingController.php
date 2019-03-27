@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Log;
 
 class MailingController extends Controller
 {
@@ -46,5 +47,29 @@ class MailingController extends Controller
             ->get();
 
         Mail::bcc($waitingHackers)->send(new Waiting());
+    }
+    
+    public function mailHandler(Request $request)
+    {
+        $mailType = json_decode($request->getContent())->MailType;
+        error_log($mailType);
+        switch ($mailType) {
+            case 'accepted_mail':
+                $this->sendEmailsAccepted();
+                break;
+            case 'rejected_mail':
+                $this->sendEmailsRejected();
+                break;
+            case 'waiting_mail':
+                $this->sendEmailsWaiting();
+                break;
+            
+            default:
+                
+                break;
+        }
+        return response()->json([
+            'response' => '200',
+        ]);
     }
 }

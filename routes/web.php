@@ -33,6 +33,8 @@ Route::get('/admin/hackers','AdminController@hackers')->name('hackers')->middlew
 
 Route::get('/admin/mailing','AdminController@mailing')->name('mailing')->middleware('auth');
 
+Route::post('/mailing','MailingController@mailHandler')->name('sendMail')->middleware('auth');
+
 Route::get('/admin/settings','AdminController@settings')->name('settings')->middleware('auth');
 
 Route::get('/admin/statistics','AdminController@statistics')->name('statistics')->middleware('auth');
