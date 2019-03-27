@@ -20,7 +20,9 @@ body {
     top: 2px;
 }
 
-
+h1 {
+    font-family: 'Karla', sans-serif !important;
+}
 
 table > * {
     font-size: 20px ; 

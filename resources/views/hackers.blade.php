@@ -13,10 +13,10 @@
 @endsection
  
 @section('content')
-<div class="container  pt-3 pb-">
+<div class="container  pt-3 pb-7">
     <div class="row justify-content-center">
         <div class="col-md-10">
-            <h1 class="text-center"> Hackers </h1>
+            <h1 class="text-center font-weight-900 text-xl"> Hackers </h1>
         </div>
         <div class="col-md-10">
 
