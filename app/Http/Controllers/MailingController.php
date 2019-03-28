@@ -52,7 +52,6 @@ class MailingController extends Controller
     public function mailHandler(Request $request)
     {
         $mailType = json_decode($request->getContent())->MailType;
-        error_log($mailType);
         switch ($mailType) {
             case 'accepted_mail':
                 $this->sendEmailsAccepted();

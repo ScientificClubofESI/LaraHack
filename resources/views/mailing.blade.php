@@ -19,8 +19,8 @@
                                     <h5 class="card-title text-uppercase text-muted mb-0">Accepted Hackers</h5>
                                     <span class="h2 font-weight-bold mb-0"> {{$accepted}} </span>
                                 </div>
-                                    <div class="col-auto "  onclick="sendMail(this , 'accepted_mail')">
-                                        <div class="hover icon icon-shape bg-success text-white rounded-circle shadow">
+                                    <div class="col-auto " >
+                                        <div  onclick="sendMail(this , 'accepted_mail')" class="hover icon icon-shape bg-success text-white rounded-circle shadow">
                                             <i class="fas fa-envelope"></i>
                                         </div>
                                     </div>
@@ -44,8 +44,8 @@
                                     <h5 class="card-title text-uppercase text-muted mb-0">Rejected Hackers</h5>
                                     <span class="h2 font-weight-bold mb-0"> {{$rejected}} </span>
                                 </div>
-                                    <div class="col-auto " onclick="sendMail(this , 'rejected_mail')">
-                                        <div class="hover icon icon-shape bg-danger text-white rounded-circle shadow">
+                                    <div class="col-auto ">
+                                        <div  onclick="sendMail(this , 'rejected_mail')" class="hover icon icon-shape bg-danger text-white rounded-circle shadow">
                                             <i class="fas fa-envelope"></i>
                                         </div>
                                     </div>
@@ -69,8 +69,8 @@
                                     <h5 class="card-title text-uppercase text-muted mb-0">Waiting Hackers</h5>
                                     <span class="h2 font-weight-bold mb-0"> {{$waiting}} </span>
                                 </div>
-                                    <div class="col-auto " onclick="sendMail(this , 'waiting_mail')">
-                                        <div class="hover icon icon-shape bg-default text-white rounded-circle shadow">
+                                    <div class="col-auto ">
+                                        <div  class="hover icon icon-shape bg-default text-white rounded-circle shadow" onclick="sendMail(this , 'waiting_mail')" >
                                             <i class="fas fa-envelope"></i>
                                         </div>
                                     </div>
@@ -97,6 +97,7 @@
     'use strict';
         const token='{{csrf_token()}}';
      function sendMail(element, mailType) {
+         console.log(element);   
         $.ajax({
                 headers:{'X-CSRF-TOKEN': token},
                 type:"POST",
@@ -106,14 +107,15 @@
                 contentType:false,
                 processData:false,
                 beforeSend: function () {
-                    $(document.body).css({'cursor': 'wait'});
+                    element.innerHTML = '<svg class="spinner" width="15px" height="15px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg"> <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle> </svg>';                    
                 },
                 success: function (json) {
                     //set the changes
                     if (json.response) {                        
                     }
                     $(document.body).css({'cursor': 'default'});
-                    swal ( "Done !" ,  "Mails Sent Sucessefully" ,  "success" )
+                    element.innerHTML = '<i class="fas fa-envelope"></i>';
+                    swal ( "Done !" ,  "Mails Sent Sucessefully" ,  "success" );
                 },
                 error: function (response) {
                     if (response.status === 401) //redirect if not authenticated user.
@@ -122,6 +124,7 @@
                     } else {
                     }
                     $(document.body).css({'cursor': 'default'});
+                    element.innerHTML = '<i class="fas fa-envelope"></i>';
                     swal ( "Oops" ,  "Something went wrong!" ,  "error" )
                 }
             })
