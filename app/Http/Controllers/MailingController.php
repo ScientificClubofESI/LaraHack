@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Hacker;
+use App\Jobs\SendAcceptedEmails;
+use App\Jobs\SendRejectedEmails;
+use App\Jobs\SendWaitingEmails;
 use App\Mail\Accepted;
 use App\Mail\Rejected;
 use App\Mail\Waiting;
@@ -26,8 +29,9 @@ class MailingController extends Controller
         foreach ($acceptedHackers as $hacker){
             $token = Crypt::encrypt($hacker->id.$hacker->name);
             $link = route('confirm',['token'=>$token]);
-            Mail::to($hacker)->send(new Accepted($link));
+            $this->dispatch(new SendAcceptedEmails($hacker,$link));
         }
+
     }
 
 
@@ -37,7 +41,9 @@ class MailingController extends Controller
             ->select('email as email','first_name as name')
             ->get();
 
-        Mail::bcc($rejectedHackers)->send(new Rejected());
+        foreach ($rejectedHackers as $hacker){
+            $this->dispatch(new SendRejectedEmails($hacker));
+        }
     }
 
     public function sendEmailsWaiting(){
@@ -46,7 +52,9 @@ class MailingController extends Controller
             ->select('email as email','first_name as name')
             ->get();
 
-        Mail::bcc($waitingHackers)->send(new Waiting());
+        foreach ($waitingHackers as $hacker){
+            $this->dispatch(new SendWaitingEmails($hacker));
+        }
     }
     
     public function mailHandler(Request $request)
