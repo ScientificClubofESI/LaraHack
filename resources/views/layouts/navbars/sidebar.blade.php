@@ -24,6 +24,11 @@
                                     <i class="text-yellow ni fas fa-users"></i> {{ __('Hackers') }}
                             </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('confirmed_hackers') }}">
+                                    <i class="text-yellow ni fas fa-users"></i> {{ __('Confirmed Hackers') }}
+                            </a>
+                </li>
 
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('mailing') }}">

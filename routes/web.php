@@ -31,6 +31,8 @@ Route::get('/admin','AdminController@index')->name('main')->middleware('auth');
 
 Route::get('/admin/hackers','AdminController@hackers')->name('hackers')->middleware('auth');
 
+Route::get('/admin/confirm','AdminController@confirmedHackers')->name('confirmed_hackers')->middleware('auth');
+
 Route::get('/admin/mailing','AdminController@mailing')->name('mailing')->middleware('auth');
 
 Route::post('/mailing','MailingController@mailHandler')->name('sendMail')->middleware('auth');
