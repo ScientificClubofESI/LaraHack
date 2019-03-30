@@ -15,7 +15,7 @@
                 </div>
             </div>
             <div class="row justify-content-center come">
-                    <span> Registration is Closed ! </span>
+                    <span> Registrations are closed ! </span>
             </div>
         </div>
     </div>

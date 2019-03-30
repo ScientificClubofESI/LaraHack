@@ -122,7 +122,7 @@
                     }
                     $(document.body).css({'cursor': 'default'});
                     element.innerHTML = '<i class="fas fa-envelope"></i>';
-                    swal ( "Done !" ,  "Mails Sent Sucessefully" ,  "success" );
+                    swal ( "Done !" ,  "Mails are being sent , it can takes some minutes ." ,  "success" );
                 },
                 error: function (response) {
                     if (response.status === 401) //redirect if not authenticated user.

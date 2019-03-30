@@ -16,7 +16,7 @@
             </div>
             <div class="row justify-content-center come">
                 @if($result)
-                    <span>Your confirmation for {{ config('app.name', 'Easy Hack') }} is done !</span>
+                    <span>Thank's for confirming your attendance to {{ config('app.name', 'Easy Hack') }} ! We are waiting for you</span>
                 @else
                     <span>Oh sorry , that's an unexpected error. Try again please !</span>
                 @endif
