@@ -121,23 +121,23 @@ $(document).ready(function () {
 
             birthday: {
 
-                required: "come on, you have a birthday, don't you?",
+                required: "come on, you have a birthday date, don't you?",
 
             },
 
             phone: {
 
-                required: "come on, you have a number, don't you?",
+                required: "come on, you have a phone number, don't you?",
 
                 minlength: "your Number must consist of at least 10 characters",
 
-                regex: "plz enter a valid phone number"
+                regex: "please enter a valid phone number"
 
             },
 
             email: {
 
-                required: "no email, no registration"
+                required: "no email, no registration !"
 
             },
 

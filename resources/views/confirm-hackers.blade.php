@@ -54,13 +54,13 @@
                             <td>{{$hacker->email }}</td>
                             <td>{{$hacker->phone_number }}</td>
                             <td>
-                                <div class="ui toggle checkbox">
+                                <div class="ui checkbox">
                                     <input
                                             @if($hacker->checked)
                                             checked
                                             @endif
                                             type="checkbox" name="public" onclick="checkHacker({{$hacker->id}})">
-                                    <label></label>
+                                    <label> Check-in</label>
                                 </div>
                             </td>
                         </tr>
