@@ -37,7 +37,9 @@ Route::get('/admin/mailing','AdminController@mailing')->name('mailing')->middlew
 
 Route::post('/mailing','MailingController@mailHandler')->name('sendMail')->middleware('auth');
 
-Route::get('/admin/settings','AdminController@settings')->name('settings')->middleware('auth');
+Route::get('/admin/settings','SettingsController@index')->name('settings')->middleware('auth');
+
+Route::post('/settings','SettingsController@update')->name('updateSettings')->middleware('auth');
 
 Route::get('/admin/statistics','AdminController@statistics')->name('statistics')->middleware('auth');
 

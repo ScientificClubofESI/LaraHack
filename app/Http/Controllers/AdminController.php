@@ -55,10 +55,6 @@ class AdminController extends Controller
         return view('confirm-hackers', ['hackers' => $confirmedHackers]);
     }
 
-    public function settings(){
-        return view('settings');
-    }
-
     public function mailing(){
         $hackers=Hacker::all()->where('decision','=','not_yet');
         $number_of_not_viewed_hackers = count($hackers);

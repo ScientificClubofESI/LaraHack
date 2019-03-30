@@ -26,7 +26,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('confirmed_hackers') }}">
-                                    <i class="text-yellow ni fas fa-users"></i> {{ __('Confirmed Hackers') }}
+                                    <i class="text-green ni fas fa-check"></i> {{ __('Confirmed Hackers') }}
                             </a>
                 </li>
 

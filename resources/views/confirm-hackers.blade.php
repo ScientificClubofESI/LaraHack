@@ -34,11 +34,11 @@
 
                         <th scope="col">E-mail</th>
                         <th scope="col">Phone</th>
-                        <th scope="col">Github</th>
+                        {{-- <th scope="col">Github</th>
                         <th scope="col">LinkedIn</th>
 
                         <th scope="col">Skills</th>
-                        <th scope="col">Motivation</th>
+                        <th scope="col">Motivation</th> --}}
                     </tr>
                 </thead>
                 <tbody>
@@ -60,7 +60,7 @@
 
                         <td>{{$hacker->email }}</td>
                         <td>{{$hacker->phone_number }}</td>
-
+{{-- 
                         <td>
                             <a href="{{$hacker->github }}" target="_blank">
                                 {{$hacker->github }}
@@ -74,7 +74,7 @@
                         </td>
 
                         <td>{{$hacker->skills }}</td>
-                        <td>{{$hacker->motivation }}</td>
+                        <td>{{$hacker->motivation }}</td> --}}
                     </tr>
                     @endforeach
                 </tbody>

@@ -11,6 +11,8 @@ use App\Team;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
+use Spatie\Valuestore\Valuestore;
+
 
 class HackerController extends Controller
 {
@@ -23,7 +25,12 @@ class HackerController extends Controller
      */
     public function create()
     {
-        return view('register');
+        $settings = Valuestore::make(storage_path('app/settings.json'));
+        if ($settings->get('registration_mode') == 'open') {
+            return view('register');
+        } else { 
+            return view('closed');
+        }
     }
 
     /**
