@@ -1,5 +1,5 @@
 @extends('emails.layouts.default') 
-@section('title') Sorry , Abdelkhalek !
+@section('title') Sorry , {{$hacker->first_name}} !
 @endsection
  
 @section('desc') You haven't been accepted
@@ -17,7 +17,3 @@ Every year, we’re given the opportunity to learn about the thousands of studen
 @section('second')Thanks for your interest in {{config('app.name')}} .
  We encourage you to keep learning and building incredible things in your community.
 @endsection
- 
-{{-- @section('button')
-<strong><a href="{{$confirmation_link}}">Confirm Attendance </a></strong>
-@endsection --}}

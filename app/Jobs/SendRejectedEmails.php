@@ -33,6 +33,6 @@ class SendRejectedEmails implements ShouldQueue
      */
     public function handle()
     {
-        Mail::to($this->hacker)->queue(new Rejected());
+        Mail::to($this->hacker)->queue(new Rejected($hacker));
     }
 }

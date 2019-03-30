@@ -1,5 +1,5 @@
 @extends('emails.layouts.default') 
-@section('title') Congrats , Abdelkhalek !
+@section('title') Congrats , {{$hacker->first_name}} !
 @endsection
  
 @section('desc') You have been accepted

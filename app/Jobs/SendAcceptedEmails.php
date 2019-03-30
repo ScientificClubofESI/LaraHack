@@ -36,6 +36,6 @@ class SendAcceptedEmails implements ShouldQueue
      */
     public function handle()
     {
-        Mail::to($this->hacker)->queue(new Accepted($this->link));
+        Mail::to($this->hacker)->queue(new Accepted($this->link,$this->hacker));
     }
 }

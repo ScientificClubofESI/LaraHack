@@ -1,11 +1,8 @@
 
 @extends('emails.layouts.default') 
-@section('title') Registration Done ! 
+@section('title') Hi {{$hacker->first_name }} , Your registration is done !
 @endsection
-{{--  
-@section('desc') You have been accepted
-to HackIT
-@endsection --}}
+
  
 @section('first') 
 @if (!is_null($team_name))
@@ -15,10 +12,6 @@ Your team's name is {{$team_name}}
  
 @section('second')
 @if (!is_null($team_code))
-    Your team's code is {{$team_code}}
+    Your team's code is {{$team_code}} . Please share that code only with your teammates .
 @endif
 @endsection
-{{--  
-@section('button')
-<strong><a href="{{$confirmation_link}}">Confirm Attendance </a></strong>
-@endsection --}}

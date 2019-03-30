@@ -33,6 +33,6 @@ class SendWaitingEmails implements ShouldQueue
      */
     public function handle()
     {
-        Mail::to($this->hacker)->queue(new Waiting());
+        Mail::to($this->hacker)->queue(new Waiting($this->hacker));
     }
 }

@@ -13,6 +13,7 @@ class Registred extends Mailable
 
     public $team_name;
     public $team_code;
+    public $hacker;
 
     /**
      * Create a new message instance.
@@ -20,8 +21,9 @@ class Registred extends Mailable
      * @param $team_name
      * @param $team_code
      */
-    public function __construct($team_name=null,$team_code=null)
+    public function __construct($hacker,$team_name=null,$team_code=null)
     {
+        $this->hacker = $hacker;
         $this->team_name = $team_name;
         $this->team_code = $team_code;
     }

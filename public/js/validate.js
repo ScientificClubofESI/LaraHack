@@ -143,13 +143,13 @@ $(document).ready(function () {
 
             github: {
 
-                url: "no..no, you have to write a valid url (http://github.com/metourni)"
+                url: "no..no, you have to write a valid url (https://github.com/AbdelkhalekESI)"
 
             },
 
             linked_in: {
 
-                url: "no..no, you have to write a valid url (http://linked-in.com/metourni)"
+                url: "no..no, you have to write a valid url (https://www.linkedin.com/in/adel-namani/)"
 
             },
 
