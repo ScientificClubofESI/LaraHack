@@ -44,10 +44,8 @@ class AdminController extends Controller
             ->where('confirmed' , '=' , 1)
             ->join('teams', 'hackers.team_id', '=', 'teams.id')
             ->select('hackers.id as id', 'hackers.first_name as first_name',
-                'hackers.last_name as last_name', 'hackers.email as email', 'hackers.sex as sex',
-                'hackers.birthday as birthday', 'hackers.phone_number as phone_number',
-                'hackers.motivation as motivation', 'hackers.github as github', 'hackers.linked_in as linked_in',
-                'hackers.skills as skills', 'hackers.size as size', 'teams.name as team_name')
+                'hackers.last_name as last_name', 'hackers.email as email', 'hackers.phone_number as phone_number',
+                'hackers.checked as checked', 'hackers.size as size', 'teams.name as team_name')
             ->orderBy('team_name')
             ->get(); // Getting all hackers with team and their teams name
         $confirmedHackersNoTeam = DB::table('hackers')->where('confirmed' , '=' , 1)->whereNull('team_id')->get(); // Getting all hackers without a team
@@ -161,6 +159,14 @@ class AdminController extends Controller
             'response' => $result,
         ]);
 
+    }
+
+    public function checkHacker(Request $request){
+        $hacker =  Hacker::find(json_decode($request->getContent())->id);
+        if ($hacker->checked) $hacker->checked = 0 ;
+        else $hacker->checked = 1 ;
+        $hacker->save();
+        return response(200);
     }
 
 }

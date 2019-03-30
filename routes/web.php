@@ -58,6 +58,8 @@ Route::post('/admin/setDecision','AdminController@setDecision')->name('setDecisi
 
 Route::get('/admin/confirmations','AdminController@confirmedHackers')->name('confirmed_hackers')->middleware('auth');
 
+Route::post('/admin/checkHacker','AdminController@checkHacker')->name('checkHacker')->middleware('auth');
+
 Route::get('/admin/mailing','AdminController@mailing')->name('mailing')->middleware('auth');
 
 Route::post('/admin/sendMails','MailingController@mailHandler')->name('sendMail')->middleware('auth');
