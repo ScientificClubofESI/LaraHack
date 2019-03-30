@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19caf663-442d-4c66-a37c-a46a532074cc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SettingsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SettingsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/register.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,13 +37,13 @@
           <entry key="json" value="2" />
           <entry key="lock" value="1" />
           <entry key="log" value="2" />
-          <entry key="php" value="195" />
+          <entry key="php" value="196" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key=".env file" value="14" />
-          <entry key="Blade" value="99" />
+          <entry key="Blade" value="100" />
           <entry key="CSS" value="7" />
           <entry key="HTML" value="1" />
           <entry key="Image" value="1" />
@@ -61,13 +60,13 @@
           <entry key="env" value="90" />
           <entry key="example" value="15" />
           <entry key="js" value="124" />
-          <entry key="php" value="9613" />
+          <entry key="php" value="9634" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="105" />
-          <entry key="Blade" value="3917" />
+          <entry key="Blade" value="3938" />
           <entry key="CSS" value="260" />
           <entry key="JavaScript" value="124" />
           <entry key="PHP" value="5696" />
@@ -77,35 +76,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Settings.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-              <folding>
-                <element signature="e#33#50#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SettingsController.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/register.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="26" column="30" lean-forward="true" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
-              <folding>
-                <element signature="e#40#57#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="300">
+              <caret line="32" column="14" lean-forward="true" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -153,7 +128,6 @@
         <option value="$PROJECT_DIR$/resources/views/layouts/navbar.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/footers/nav.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/sections/about.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/register.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/footer.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_03_24_213222_add_confirmation_column_to_hacker_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ConfirmationsController.php" />
@@ -188,6 +162,7 @@
         <option value="$PROJECT_DIR$/app/Settings.php" />
         <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/SettingsController.php" />
+        <option value="$PROJECT_DIR$/resources/views/register.blade.php" />
       </list>
     </option>
   </component>
@@ -309,6 +284,17 @@
               <item name="HackWajed" type="b2602c69:ProjectViewProjectNode" />
               <item name="HackWajed" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="HackWajed" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HackWajed" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HackWajed" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HackWajed" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -358,21 +344,21 @@
       <updated>1552857682893</updated>
       <workItem from="1552857685348" duration="20077000" />
       <workItem from="1553078349376" duration="86905000" />
-      <workItem from="1553626550153" duration="33562000" />
+      <workItem from="1553626550153" duration="34725000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140544000" />
+    <option name="totallyTimeSpent" value="141707000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="27" width="1299" height="741" extended-state="6" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info id="npm" order="1" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.2793296" />
+      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.2793296" />
       <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="0" visible="true" weight="0.33278146" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="0" visible="true" weight="0.33278146" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
@@ -593,16 +579,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/register.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1335">
-          <caret line="98" column="44" lean-forward="true" selection-start-line="98" selection-start-column="44" selection-end-line="98" selection-end-column="44" />
-          <folding>
-            <element signature="e#1302#1336#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/emails/layouts/default.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-675" />
@@ -723,7 +699,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
+        <state relative-caret-position="105">
           <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
           <folding>
             <element signature="e#33#50#0#PHP" expanded="true" />
@@ -733,11 +709,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SettingsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
+        <state relative-caret-position="136">
           <caret line="26" column="30" lean-forward="true" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
           <folding>
             <element signature="e#40#57#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/register.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="32" column="14" lean-forward="true" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
         </state>
       </provider>
     </entry>
