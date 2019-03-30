@@ -97,8 +97,15 @@
     'use strict';
         const token='{{csrf_token()}}';
      function sendMail(element, mailType) {
-         console.log(element);   
-        $.ajax({
+         swal({
+             title : "Are you sure to send mails ?" ,
+             text: "Once sent, you will not be able to redo!",
+             icon :"warning" ,
+             buttons : true , 
+         }) 
+         .then((willSend) => { 
+             if (willSend) {
+                $.ajax({
                 headers:{'X-CSRF-TOKEN': token},
                 type:"POST",
                 url:"{{route('sendMail')}}",
@@ -128,6 +135,11 @@
                     swal ( "Oops" ,  "Something went wrong!" ,  "error" )
                 }
             })
+             } else {
+                swal("You havn't send any mail !");
+             }
+         })
+       
      }
 </script>
 
