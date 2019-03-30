@@ -18,7 +18,7 @@
             </div>
             <div id="hideFinal">
                 <div class="row justify-content-center come">
-                    <span>Challenge yourself and register in {{ config('app.name', 'Easy Hack') }} ! <br>A few Steps from the biggest student hackathon .</span>
+                    <span>Challenge yourself and register in {{ config('app.name') }} ! <br>A few Steps from the biggest student hackathon .</span>
                 </div>
                 <div class="row justify-content-center">
                     <button id="go-ahead" class="custom-button"> Go Ahead !</button>
@@ -76,7 +76,7 @@
                     </div>
 
                     <div class="formi col-lg-12">
-                        <label class="labeli" for="motivation">Why do you want to participate in hackIT?</label>
+                        <label class="labeli" for="motivation">Why do you want to participate in {{config('app.name')}} ?</label>
                         <textarea type="text" rows=6 class="inputi" id="motivation" name="motivation"
                                   placeholder="Motivation"></textarea>
                         <div class="separator"></div>

@@ -3,15 +3,15 @@
 @endsection
  
 @section('desc') You have been accepted
-to HackIT
+to {{config('app.name')}}
 @endsection
  
-@section('first') You have been accepted to HackIT One last important thing to remember: confirm your
+@section('first') You have been accepted to {{config('app.name')}} One last important thing to remember: confirm your
 spot by clicking the confirm attendance button .
 @endsection
  
 @section('second') In case something else has come along and
-you won't be able to come, please tell us . <br> We hope to see you at HackIT ! .
+you won't be able to come, please tell us . <br> We hope to see you at {{config('app.name')}} ! .
 @endsection
  
 @section('button')
