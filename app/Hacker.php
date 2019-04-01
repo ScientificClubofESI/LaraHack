@@ -37,4 +37,7 @@ class Hacker extends Model
         $this->confirmed = true;
 
     }
+    public function reject(){
+        $this->decision = 'rejected';
+    }
 }
