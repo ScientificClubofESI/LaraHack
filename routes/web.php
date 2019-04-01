@@ -56,7 +56,7 @@ Route::get('/admin/hackers','AdminController@hackers')->name('hackers')->middlew
 
 Route::post('/admin/setDecision','AdminController@setDecision')->name('setDecision')->middleware('auth');
 
-Route::get('/admin/confirmations','AdminController@confirmedHackers')->name('confirmed_hackers')->middleware('auth');
+Route::get('/admin/checkin','AdminController@checkin')->name('checkin')->middleware('auth');
 
 Route::post('/admin/checkHacker','AdminController@checkHacker')->name('checkHacker')->middleware('auth');
 

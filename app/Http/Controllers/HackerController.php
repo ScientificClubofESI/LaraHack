@@ -27,9 +27,9 @@ class HackerController extends Controller
     {
         $settings = Valuestore::make(storage_path('app/settings.json'));
         if ($settings->get('registration_mode') == 'open') {
-            return view('register');
+            return view('registration.register');
         } else { 
-            return view('closed');
+            return view('registration.closed');
         }
     }
 

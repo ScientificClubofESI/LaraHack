@@ -1,0 +1,48 @@
+div .col-lg-5 {
+    margin-top: 3rem !important;
+}
+
+body {
+    background-image: url('../../images/background.jpg'); 
+    background-attachment: fixed ; 
+    background-repeat: no-repeat ; 
+    background-size: cover ; 
+    background-clip: border-box ; 
+}
+
+.text-black {
+    color : rgb(51, 51, 51) !important; 
+}
+
+.form-control {
+    color : rgb(51, 51, 51) !important; 
+}
+
+.form-control:focus {
+    color : rgb(51, 51, 51) !important; 
+}
+
+.card-profile-image img
+{
+    box-shadow: 0 0 2rem 5px rgba(136, 152, 170, .15) !important;
+}
+
+.focused .input-group-text
+{
+    color : rgb(51, 51, 51) !important;
+}
+
+.focused .input-group-text
+{
+    color : rgb(51, 51, 51) !important;
+}
+
+.btn {
+    background-color: rgb(2,165,220);
+    border-color: transparent;
+}
+.btn:hover {
+    background-color: rgb(46, 189, 236);
+    border-color: transparent;
+
+}

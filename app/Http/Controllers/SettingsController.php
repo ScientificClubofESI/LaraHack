@@ -13,7 +13,7 @@ class SettingsController extends Controller
     {
         $settings = Valuestore::make(storage_path('app/settings.json'));
 
-        return view('settings', ['settings' => $settings]);    }
+        return view('dashboard.settings', ['settings' => $settings]);    }
 
     public function update(Request $request,Settings $settings)
     {

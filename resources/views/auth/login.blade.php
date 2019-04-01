@@ -1,9 +1,9 @@
-@extends('layouts.app', ['class' => 'bg-default'])
+@extends('layouts.dashboard.app', ['class' => 'bg-default'])
 @section('styles')
-    <link type="text/css" href="{{ asset('argon') }}/css/style.css?v=1.0.0" rel="stylesheet">
+    <link type="text/css" href="{{ asset('dash') }}/css/style.css?v=1.0.0" rel="stylesheet">
 @endsection
 @section('content')
-    @include('layouts.headers.guest')
+    @include('layouts.dashboard.headers.guest')
     
     <div class="container mt--8 pb-5">
         <div class="row justify-content-center">

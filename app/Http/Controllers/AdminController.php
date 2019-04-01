@@ -35,10 +35,10 @@ class AdminController extends Controller
             ->get(); // Getting all hackers with team and their teams name
         $hackersNoTeam = DB::table('hackers')->whereNull('team_id')->get(); // Getting all hackers without a team
         $hackers = $hackers->merge($hackersNoTeam); // Putting all in one table
-        return view('hackers', ['hackers' => $hackers]);
+        return view('dashboard.hackers', ['hackers' => $hackers]);
     }
 
-    public function confirmedHackers()
+    public function checkin()
     {
         $confirmedHackers = DB::table('hackers')
             ->where('confirmed' , '=' , 1)
@@ -50,7 +50,7 @@ class AdminController extends Controller
             ->get(); // Getting all hackers with team and their teams name
         $confirmedHackersNoTeam = DB::table('hackers')->where('confirmed' , '=' , 1)->whereNull('team_id')->get(); // Getting all hackers without a team
         $confirmedHackers = $confirmedHackers->merge($confirmedHackersNoTeam); // Putting all in one table
-        return view('confirm-hackers', ['hackers' => $confirmedHackers]);
+        return view('dashboard.checkin', ['hackers' => $confirmedHackers]);
     }
 
     public function mailing(){
@@ -65,7 +65,7 @@ class AdminController extends Controller
 
         $hackers=Hacker::all()->where('decision','=','waiting_list');
         $number_of_waiting_hackers = count($hackers);
-        return view('mailing' , ['accepted' => $number_of_accepted_hackers , 'rejected' => $number_of_rejected_hackers , 'waiting' => $number_of_waiting_hackers , 'not_yet' => $number_of_not_viewed_hackers]);
+        return view('dashboard.mailing' , ['accepted' => $number_of_accepted_hackers , 'rejected' => $number_of_rejected_hackers , 'waiting' => $number_of_waiting_hackers , 'not_yet' => $number_of_not_viewed_hackers]);
     }
 
 
@@ -139,7 +139,7 @@ class AdminController extends Controller
 
         //dd(array_keys($inscription_date_chart));
 
-        return view('statistics',['decision_chart'=>$decisions_chart,'size_chart'=>$size_chart,'gender_chart'=>$gender_chart,'inscription_date_chart'=>$inscription_date_chart]);
+        return view('dashboard.statistics',['decision_chart'=>$decisions_chart,'size_chart'=>$size_chart,'gender_chart'=>$gender_chart,'inscription_date_chart'=>$inscription_date_chart]);
     }
 
     /**

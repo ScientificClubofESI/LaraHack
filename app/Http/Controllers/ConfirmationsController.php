@@ -24,6 +24,6 @@ class ConfirmationsController extends Controller
         else{
             $result = false;
         }
-        return view('confirmation',['result'=>$result]);
+        return view('registration.confirmation',['result'=>$result]);
     }
 }

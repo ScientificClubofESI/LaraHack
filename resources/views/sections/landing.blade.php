@@ -3,8 +3,7 @@
         <div class="container-fluid landing-contents">
           <div class="row">
             <div class="col-12">
-              <img src="images/LOGO.png" class="logo-img">
-    
+              <img src="{{asset('images/LOGO.png')}}" alt="alt="{{config('app.name')}}"" class="logo-img">
             </div>
           </div>
     
