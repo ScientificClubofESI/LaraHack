@@ -6,6 +6,8 @@ use App\Hacker;
 use App\Http\Requests\SetDecisionRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
+
 
 class AdminController extends Controller
 {
@@ -24,6 +26,18 @@ class AdminController extends Controller
      */
     public function hackers()
     {
+         // Update Hackathon Decision " Reject All Unconfirmed Hackers 
+         $Hackers_v2 = Hacker::all() ;
+         $now = Carbon::now();
+         $limit = 2 ;
+         foreach ($Hackers_v2 as $hacker ) {
+             $recieved_date = Carbon::parse($hacker->accepted_email_received_at)->addDays($limit) ; 
+             if(var_dump($recieved_date->lt($now))) {
+                 $hacker->reject();
+                 $hacker->save();
+             }       
+         }
+         
         $hackers = DB::table('hackers')
             ->join('teams', 'hackers.team_id', '=', 'teams.id')
             ->select('hackers.id as id', 'hackers.first_name as first_name',
@@ -35,6 +49,7 @@ class AdminController extends Controller
             ->get(); // Getting all hackers with team and their teams name
         $hackersNoTeam = DB::table('hackers')->whereNull('team_id')->get(); // Getting all hackers without a team
         $hackers = $hackers->merge($hackersNoTeam); // Putting all in one table
+        // Return Hackers DataTable 
         return view('dashboard.hackers', ['hackers' => $hackers]);
     }
 

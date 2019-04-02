@@ -17,23 +17,19 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Log;
 use Carbon\Carbon;
 
-
 class MailingController extends Controller
 {
     public function sendEmailsAccepted(){
-        $acceptedHackers = DB::table('hackers')
+        $acceptedHackers = Hacker::all()
             ->where('decision','=','accepted')
-            ->whereNull('accepted_email_received_at')
-            ->select('id as id','email as email','first_name as name')
-            ->get();
+            ->where('accepted_email_received_at' , '=' , null);
 
         $token = '';
 
         foreach ($acceptedHackers as $hacker){
-            $myDate = (string) Carbon::now();
-            $hacker->accepted_email_received_at = $myDate ;
+            $hacker->accepted_email_received_at = Carbon::now() ;
             $hacker->save();
-            $token = Crypt::encrypt($hacker->id.$hacker->name);
+            $token = Crypt::encrypt($hacker->id.$hacker->first_name);
             $link = route('confirm',['token'=>$token]);
             $this->dispatch(new SendAcceptedEmails($hacker,$link));
         }

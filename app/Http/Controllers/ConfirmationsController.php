@@ -18,10 +18,12 @@ class ConfirmationsController extends Controller
         $id=$id[0][0];
         $hacker = Hacker::find( (int) $id);
         $now = Carbon::now();
-        $limit = 1 ;
+        $limit = 2 ;
+        $recieved_date = Carbon::parse($hacker->accepted_email_received_at)->addDays($limit) ; 
         if ($hacker != null){
-            if( $hacker->accepted_email_received_at->addDays($limit)->greatherThan($now) ) {
+            if(var_dump($recieved_date->lt($now))) {
                 $hacker->reject();
+                $hacker->save();
                 return view('registration.expire');
             } else {
                 $hacker->confirmAttendance();
