@@ -20,7 +20,9 @@ class AdminTest extends TestCase
 
     public function testAdminLogin()
     {
+        // Create New Admin 
         $user = factory(User::class)->create();
+        // Login And redirect to the Dashboard
         $response = $this->actingAs($user)
         ->get(route('main'))
         ->assertStatus(302)
