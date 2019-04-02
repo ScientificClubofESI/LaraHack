@@ -63,7 +63,7 @@ class HackerController extends Controller
                 $team->save();
                 $team->hackers()->save($hacker);
                 Mail::to($hacker)->send(new Registred($hacker,$team->name,$team->code));
-                return response()->json(['success' => 'Inscription done', 'code' => $team->code, 'name' => $team->name]);
+                return response()->json(['success' => 'Registration done', 'code' => $team->code, 'name' => $team->name]);
 
             }
 
@@ -73,14 +73,14 @@ class HackerController extends Controller
                 $team = Team::find($team_id);
                 $team->hackers()->save($hacker);
                 Mail::to($hacker)->send(new Registred($hacker,$team->name,$team->code));
-                return response()->json(['success' => 'Inscription done', 'code' => $team->code, 'name' => $team->name]);
+                return response()->json(['success' => 'Registration done', 'code' => $team->code, 'name' => $team->name]);
 
             }
 
             else {// Else, the hacker have no team
                 $hacker->save();
                 Mail::to($hacker)->send(new Registred($hacker));
-                return response()->json(['success' => 'Inscription done']);
+                return response()->json(['success' => 'Registration done' , 'created' => true ] ,201);     
             }
 
         }

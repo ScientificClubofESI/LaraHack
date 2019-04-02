@@ -32,7 +32,7 @@ class AdminController extends Controller
          $limit = 2 ;
          foreach ($Hackers_v2 as $hacker ) {
              $recieved_date = Carbon::parse($hacker->accepted_email_received_at)->addDays($limit) ; 
-             if(var_dump($recieved_date->lt($now))) {
+             if($recieved_date->lt($now)) {
                  $hacker->reject();
                  $hacker->save();
              }       
