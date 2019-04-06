@@ -53,6 +53,8 @@ commit messages should be descriptive and properly formatted.
 
 Tasks List
 -------
+
+- [ ] Add Quick deploy to Heroku 
 - [ ] Add multiple admins with different access
 - [ ] Add more settings 
 - [ ] Add explore teams ( Join other incomplete teams )
