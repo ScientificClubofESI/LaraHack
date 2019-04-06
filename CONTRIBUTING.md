@@ -50,6 +50,13 @@ Any changes to the code base should follow the style and coding conventions
 used in the rest of the project. The version history should be clean, and
 commit messages should be descriptive and properly formatted.
 
+
+Tasks List
+-------
+- [ ] Add multiple admins with different access
+- [ ] Add more settings 
+- [ ] Add explore teams ( Join other incomplete teams )
+
 ---
 
 If you have any questions about anything, feel free to [ask][email]!

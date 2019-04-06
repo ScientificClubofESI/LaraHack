@@ -106,7 +106,7 @@ To customize the decision and confirmation emails for your event, edit email tem
 # Contributing 
 
 Do you have a feature request, bug report, or patch? Great! See
-[CONTRIBUTING.md][contributing] for information on what you can do about that.
+[CONTRIBUTING.md][contribute] for information on what you can do about that.
 Contributions to EasyHack are welcome and appreciated !
 
 # Feedback / Questions 
