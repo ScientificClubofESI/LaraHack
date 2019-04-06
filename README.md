@@ -4,15 +4,15 @@ For participants , it's a clean and simple to submit application with or without
 For Organizers , it's an easy way to create your hackathon website , view registrations , analyze statistics , Check-In and much more ! 
 
 # Features 
-- WebSite Template : Easyhack have a website template contain all necessary sections ( About , Challenges , Sponsors .... ) with clean code so you can modify and customize it . 
-- Registration : With easyhack hackers can register easily with or without team throw a view similar to TypeForm .
-- Statistics : Admin can view the decision stats and analyze them , registration per day , and much more ! 
-- Dashboard : Admin can view all application , take a decision and export data to Excel or CSV .
-- Mailing : Easyhack contain all necessary email view like : 
+- **WebSite Template** : Easyhack have a website template contain all necessary sections ( About , Challenges , Sponsors .... ) with clean code so you can modify and customize it . 
+- **Registration** : With easyhack hackers can register easily with or without team throw a view similar to TypeForm .
+- **Statistics** : Admin can view the decision stats and analyze them , registration per day , and much more ! 
+- **Dashboard** : Admin can view all application , take a decision and export data to Excel or CSV .
+- **Mailing** : Easyhack contain all necessary email view like : 
     - Application recieved : which contain team name and team id .
     - Organizer Decision : Waiting list , Rejected Or Accepted with confirm attendance link .
-- Check-In : check the participants at the event day . 
-- Settings : Configure some essential settings ( at the moment it contains only registration mode ) . 
+- **Check-In** : check the participants at the event day . 
+- **Settings** : Configure some essential settings ( at the moment it contains only registration mode ) . 
 
 # Screenshots 
 
@@ -42,6 +42,7 @@ select version() ;
 ### Deploy locally 
 
 Getting a local instance of EasyHack up and running is very quickly ! Start By Creating A Database on MySQL and go with these steps : 
+
 1 - Clone the repository and cd to the project folder:
 ```bash
 git clone https://github.com/ScientificClubofESI/EasyHack 
@@ -92,6 +93,6 @@ If you have any questions about this software, please contact ha_zellat@esi.dz.
 
 # License 
 
-Copyright (c) 2019 Scienitif Club Of ESI (https://github.com/ScientificClubofESI). Released under AGPLv3. See [`LICENSE.txt`][license] for details.
+Copyright (c) 2019 Scienitif Club Of ESI (https://github.com/ScientificClubofESI). Released under AGPLv3. See [`LICENSE`][license] for details.
 
 	
