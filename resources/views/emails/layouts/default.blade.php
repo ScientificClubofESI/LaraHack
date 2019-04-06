@@ -60,7 +60,7 @@
                                         @yield('second')
                                     </p>
                                     <p>For any questions, please visit our FAQ on our website or don't hesitate to contact us
-                                        at ha_zellat@esi.dz .
+                                        at cse@esi.dz .
                                     </p>
 
                                     <p class="button-container">

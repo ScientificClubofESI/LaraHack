@@ -53,7 +53,7 @@
                                             checked
                                             @endif
                                             type="checkbox" name="public" onclick="checkHacker({{$hacker->id}})">
-                                    <label> Check-in</label>
+                                    <label> </label>
                                 </div>
                             </td>
                         </tr>
