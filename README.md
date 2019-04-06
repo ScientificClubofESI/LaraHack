@@ -1,6 +1,6 @@
 # EasyHack
 
-EasyHack is a complete administration systems designed especially for hackathons .
+EasyHack is a complete administration systems designed especially for hackathons and similar competitions .
 For participants , it's a clean and simple to submit application with or without team and confirm attendance .
 For Organizers , it's an easy way to create your hackathon website , view registrations , analyze statistics , Check-In and much more ! 
 
