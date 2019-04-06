@@ -17,7 +17,6 @@ For Organizers , it's an easy way to create your hackathon website , view regist
 - **Mailing** : Easyhack contain all necessary email view like : 
     - Application recieved : which contain team name and team id .
     - Organizer Decision : Waiting list , Rejected Or Accepted with confirm attendance link .
-
 - **Check-In** : check the participants at the event day . 
 
 - **Settings** : Configure some essential settings ( at the moment it contains only registration mode ) . 
@@ -98,6 +97,7 @@ You find the hackathon landing page section in the folder `/resources/views/sect
 
 To customize the decision and confirmation emails for your event, edit email templates in 
 `/resources/views/emails` 
+
 ## Notes : 
 
 - Access to the admin dashboard via the link `/admin` 
@@ -117,7 +117,7 @@ If you have any questions about this software, please contact ha_zellat@esi.dz.
 
 Copyright (c) 2019 Scienitif Club Of ESI (https://github.com/ScientificClubofESI). Released under AGPLv3. See [`LICENSE`][license] for details.
 
-
 [contribute]: https://github.com/ScientificClubofESI/EasyHack/blob/master/CONTRIBUTING.md
 [license]: https://github.com/ScientificClubofESI/EasyHack/blob/master/LICENSE
+
 	
