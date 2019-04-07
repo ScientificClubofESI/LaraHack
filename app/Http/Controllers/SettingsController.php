@@ -9,28 +9,38 @@ use Spatie\Valuestore\Valuestore;
 
 class SettingsController extends Controller
 {
+    /**
+     * Show settings view with current settings
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
         $settings = Valuestore::make(storage_path('app/settings.json'));
 
-        return view('dashboard.settings', ['settings' => $settings]);    }
+        return view('dashboard.settings', ['settings' => $settings]);
+    }
 
-    public function update(Request $request,Settings $settings)
+    /**
+     * @param Request $request
+     * @param Settings $settings
+     * Update the current settings
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function update(Request $request, Settings $settings)
     {
         try {
-            //$settings = Valuestore::make(storage_path('app/settings.json'));
-        
-            $registrationMode =  json_decode($request->getContent())->registration_mode ;
-        
+
+            $registrationMode = json_decode($request->getContent())->registration_mode;
+
             $settings->put('registration_mode', $registrationMode);
 
             return response()->json([
                 'response' => 200,
             ]);
-        
+
         } catch (Throwable $err) {
-            throw $err ;
-        }    
+            throw $err;
+        }
     }
 
 

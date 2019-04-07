@@ -11,6 +11,12 @@ use Carbon\Carbon;
 
 class ConfirmationsController extends Controller
 {
+    /**
+     * @param Request $request
+     * Confirm an accepted hacker when he click the link
+     * If the link is expired then the hacker is rejected
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     function confirmHacker(Request $request)
     {
         $decrypted = Crypt::decrypt($request->token);

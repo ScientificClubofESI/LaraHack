@@ -22,6 +22,8 @@ class AdminController extends Controller
     /**
      * Display all hackers , regardless if they have a team or not
      *
+     * Update Hackers Decision | Reject All unconfirmed Hackers within a limit
+     *
      * @return \Illuminate\Http\Response
      */
     public function hackers()
@@ -53,6 +55,11 @@ class AdminController extends Controller
         return view('dashboard.hackers', ['hackers' => $hackers]);
     }
 
+
+    /**
+     * Check-in view
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function checkin()
     {
         $confirmedHackers = DB::table('hackers')
@@ -63,11 +70,18 @@ class AdminController extends Controller
                 'hackers.checked as checked', 'hackers.size as size', 'teams.name as team_name')
             ->orderBy('team_name')
             ->get(); // Getting all hackers with team and their teams name
+
         $confirmedHackersNoTeam = DB::table('hackers')->where('confirmed' , '=' , 1)->whereNull('team_id')->get(); // Getting all hackers without a team
+
         $confirmedHackers = $confirmedHackers->merge($confirmedHackersNoTeam); // Putting all in one table
+
         return view('dashboard.checkin', ['hackers' => $confirmedHackers]);
     }
 
+    /**
+     * Mailing view
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function mailing(){
         $hackers=Hacker::all()->where('decision','=','not_yet');
         $number_of_not_viewed_hackers = count($hackers);
@@ -80,12 +94,19 @@ class AdminController extends Controller
 
         $hackers=Hacker::all()->where('decision','=','waiting_list');
         $number_of_waiting_hackers = count($hackers);
+
         return view('dashboard.mailing' , ['accepted' => $number_of_accepted_hackers , 'rejected' => $number_of_rejected_hackers , 'waiting' => $number_of_waiting_hackers , 'not_yet' => $number_of_not_viewed_hackers]);
     }
 
 
-
+    /**
+     * Statistics view
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function statistics(){
+
+        //Decisions Chart
+
         $hackers=Hacker::all();
         $number_of_all_hackers = count($hackers);
 
@@ -109,6 +130,8 @@ class AdminController extends Controller
             'waiting' => $number_of_waiting_hackers,
         ];
 
+        //T-shirt size chart
+
         $hackers=Hacker::all()->where('size','=','XL')->where('decision','=','accepted');
         $number_of_xl_tshirts = count($hackers);
 
@@ -128,6 +151,8 @@ class AdminController extends Controller
             'S' => $number_of_s_tshirts,
         ];
 
+        //Sexe chart
+
         $hackers=Hacker::all()->where('sex','=','male')->where('decision','=','accepted');
         $number_of_male_hackers = count($hackers);
 
@@ -139,6 +164,8 @@ class AdminController extends Controller
             'female' => $number_of_female_hackers
         ];
 
+        //Registration per day chart
+
         $hackers=Hacker::all('created_at');
 
         $i = 0;
@@ -149,10 +176,6 @@ class AdminController extends Controller
         }
 
         $inscription_date_chart=array_count_values($dates);
-
-        //dd($decisions_chart,$size_chart,$gender_chart,$inscription_date_chart);
-
-        //dd(array_keys($inscription_date_chart));
 
         return view('dashboard.statistics',['decision_chart'=>$decisions_chart,'size_chart'=>$size_chart,'gender_chart'=>$gender_chart,'inscription_date_chart'=>$inscription_date_chart]);
     }
@@ -176,6 +199,11 @@ class AdminController extends Controller
 
     }
 
+    /**
+     * @param Request $request
+     * Check or uncheck a hacker
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
+     */
     public function checkHacker(Request $request){
         $hacker =  Hacker::find(json_decode($request->getContent())->id);
         if ($hacker->checked) $hacker->checked = 0 ;
