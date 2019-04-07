@@ -26,12 +26,16 @@ class MailingController extends Controller
 
         $token = '';
 
+        //dd($acceptedHackers);
+
         foreach ($acceptedHackers as $hacker){
             $hacker->accepted_email_received_at = Carbon::now() ;
             $hacker->save();
             $token = Crypt::encrypt($hacker->id.$hacker->first_name);
             $link = route('confirm',['token'=>$token]);
+            error_log('i am here');
             $this->dispatch(new SendAcceptedEmails($hacker,$link));
+            //Mail::to($hacker)->send(new Accepted($link,$hacker));
         }
 
     }

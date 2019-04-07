@@ -6,20 +6,20 @@ For Organizers , it's an easy way to create your hackathon website , view regist
 
 # Features 
 
-- **WebSite Template** : Easyhack have a website template contain all necessary sections ( About , Challenges , Sponsors .. ) with clean code so you can modify and customize it . 
+- **WebSite Template** : Easyhack has a website template that contains all necessary sections ( About , Challenges , Sponsors .. ) with a clean code so you can modify and customize it . 
 
-- **Registration** : With easyhack hackers can register easily with or without team throw a view similar to TypeForm .
+- **Registration** : With Easyhack hackers can register easily with or without a team through a register view that is similar to TypeForm and also.
 
-- **Statistics** : Admin can view the decision stats and analyze them , registration per day , and much more ! 
+- **Statistics** : The admin has access to a lot of statistics about registration such us registrations rate per day , decisions about hackers ... and muc more ! 
 
-- **Dashboard** : Admin can view all application , take a decision and export data to Excel or CSV .
+- **Dashboard** : Admin can view all applications to the hackathon , take a decision and export data to Excel or CSV .
 
-- **Mailing** : Easyhack contain all necessary email view like : 
-    - Application recieved : which contain team name and team id .
-    - Organizer Decision : Waiting list , Rejected Or Accepted with confirm attendance link .
-- **Check-In** : check the participants at the event day . 
+- **Mailing** : Easyhack is able to send emails such as : 
+    - Successful application: which is sent to every hacker who apply , informing him that his application is done successfully and providing him with his team's name and team's code if he choosed to register with a team .
+    - Decision : Waiting list , Rejected Or Accepted with confirm attendance link .
+- **Check-In** : Allows organizers to check the participants present at the event day . 
 
-- **Settings** : Configure some essential settings ( at the moment it contains only registration mode ) . 
+- **Settings** : Configure some essential settings ( at the moment it contains only the possibility to close or open registrations ) . 
 
 # Screenshots 
 
@@ -37,13 +37,11 @@ For Organizers , it's an easy way to create your hackathon website , view regist
 | ------------------------------------------- | ------- |
 | [PHP](https://www.php.net)                | `7.1+`  |
 | [Composer](https://getcomposer.org) | `1.8+`  |
-| [Laravel](https://laravel.com) | `2.0+`  |
 | [MySQL](https://www.mysql.com) | `8.0+`  |
 
 Run the following commands to check the current installed versions:
 
 ```bash
-laravel --version
 php --version
 ```
 
@@ -67,16 +65,17 @@ cd EasyHack
 composer install  
 ```
 
-3 - Create your `.env` file from `.env.example` and generate an app key (Don't forget to configure it with the database ) :
+3 - Create your `.env` file from `.env.example` and generate an app key (Don't forget to configure it with the database, and your email , if the host is googlemail so let mail driver , host and port as it was in env.example ; else you should change them ) :
 ```bash
 cp .env .env.example
 php artisan key:generate  
 ```
 
-4 - Migrate the database and start listening a queue : 
+4 - Migrate the database , start listening a queue and run the server (The 2 last in different terminals): 
 ```bash
 php artisan migrate 
 php artisan queue:listen database 
+php artisan serve
 ```
 
 # Customizing for your event 
