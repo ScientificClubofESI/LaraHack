@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/ScientificClubofESI/LaraHack/Screenshots/LaraHackLogo.png" alt="LaraHack banner">
+<img src="https://raw.githubusercontent.com/ScientificClubofESI/LaraHack/master/Screenshots/LaraHackLogo.png" alt="LaraHack banner">
 
 **LaraHack** is a complete administration systems designed especially for hackathons and similar competitions .
 For participants , it's a clean and simple to submit application with or without team and confirm attendance .
