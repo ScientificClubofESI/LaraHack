@@ -120,7 +120,7 @@ If you have any questions about this software, please contact ha_zellat@esi.dz o
 
 # License 
 
-Copyright (c) 2019 Scienitif Club Of ESI (https://github.com/ScientificClubofESI). Released under AGPLv3. See [`LICENSE`][license] for details.
+Copyright (c) 2019 Scientific Club Of ESI (https://github.com/ScientificClubofESI). Released under AGPLv3. See [`LICENSE`][license] for details.
 
 [contribute]: https://github.com/ScientificClubofESI/LaraHack/blob/master/CONTRIBUTING.md
 [license]: https://github.com/ScientificClubofESI/LaraHack/blob/master/LICENSE
