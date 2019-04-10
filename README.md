@@ -110,7 +110,7 @@ Contributions to EasyHack are welcome and appreciated !
 
 # Feedback / Questions 
 
-If you have any questions about this software, please contact ha_zellat@esi.dz.
+If you have any questions about this software, please contact ha_zellat@esi.dz or ga_namani@esi.dz .
 
 # License 
 
