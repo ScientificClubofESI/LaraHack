@@ -1,12 +1,14 @@
 <img src="https://raw.githubusercontent.com/ScientificClubofESI/LaraHack/master/Screenshots/LaraHackLogo.png" alt="LaraHack banner">
 
 **LaraHack** is a complete administration systems designed especially for hackathons and similar competitions .
+
 For participants , it's a clean and simple to submit application with or without team and confirm attendance .
+
 For Organizers , it's an easy way to create your hackathon website , view registrations , analyze statistics , Check-In and much more ! 
 
 # Features 
 
-- **WebSite Template** : LaraHack has a website template that contains all necessary sections ( About , Challenges , Sponsors .. ) with a clean code so you can modify and customize it . 
+- **WebSite Template** : LaraHack has a website template that contains all necessary sections ( About,Challenges,Sponsors.. ) with a clean code so you can modify and customize it . 
 
 - **Registration** : With LaraHack hackers can register easily with or without a team through a register view that is similar to TypeForm and also.
 
@@ -65,7 +67,7 @@ cd LaraHack
 composer install  
 ```
 
-3 - Create your `.env` file from `.env.example` and generate an app key (Don't forget to configure it with the database, and your email , if the host is googlemail so let mail driver , host and port as it was in env.example ; else you should change them ) :
+3 - Create your `.env` file from `.env.example` and generate an app key ( Don't forget to configure it with the database, and your email , if the host is googlemail so let mail driver , host and port as it was in env.example ) :
 ```bash
 cp .env .env.example
 php artisan key:generate  
