@@ -82,7 +82,7 @@ php artisan serve
 
 ### Hackathon name 
 
-Don't forget to put your hackathon name in environment variable `APP_NAME` 
+Don't forget to put your hackathon name in environment variable `APP_NAME` ( `.env` file )
 
 ### Hackathon Logo 
 
