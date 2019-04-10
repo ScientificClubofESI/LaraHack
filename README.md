@@ -1,20 +1,20 @@
-# EasyHack
+<img src="https://raw.githubusercontent.com/ScientificClubofESI/LaraHack/Screenshots/LaraHackLogo.png" alt="LaraHack banner">
 
-EasyHack is a complete administration systems designed especially for hackathons and similar competitions .
+**LaraHack** is a complete administration systems designed especially for hackathons and similar competitions .
 For participants , it's a clean and simple to submit application with or without team and confirm attendance .
 For Organizers , it's an easy way to create your hackathon website , view registrations , analyze statistics , Check-In and much more ! 
 
 # Features 
 
-- **WebSite Template** : Easyhack has a website template that contains all necessary sections ( About , Challenges , Sponsors .. ) with a clean code so you can modify and customize it . 
+- **WebSite Template** : LaraHack has a website template that contains all necessary sections ( About , Challenges , Sponsors .. ) with a clean code so you can modify and customize it . 
 
-- **Registration** : With Easyhack hackers can register easily with or without a team through a register view that is similar to TypeForm and also.
+- **Registration** : With LaraHack hackers can register easily with or without a team through a register view that is similar to TypeForm and also.
 
 - **Statistics** : The admin has access to a lot of statistics about registration such us registrations rate per day , decisions about hackers ... and muc more ! 
 
 - **Dashboard** : Admin can view all applications to the hackathon , take a decision and export data to Excel or CSV .
 
-- **Mailing** : Easyhack is able to send emails such as : 
+- **Mailing** : LaraHack is able to send emails such as : 
     - Successful application: which is sent to every hacker who apply , informing him that his application is done successfully and providing him with his team's name and team's code if he choosed to register with a team .
     - Decision : Waiting list , Rejected Or Accepted with confirm attendance link .
 - **Check-In** : Allows organizers to check the participants present at the event day . 
@@ -52,12 +52,12 @@ select version() ;
 
 ### Deploy locally 
 
-Getting a local instance of EasyHack up and running is very quickly ! Start By Creating A Database on MySQL and go with these steps : 
+Getting a local instance of LaraHack up and running is very quickly ! Start By Creating A Database on MySQL and go with these steps : 
 
 1 - Clone the repository and cd to the project folder:
 ```bash
-git clone https://github.com/ScientificClubofESI/EasyHack 
-cd EasyHack 
+git clone https://github.com/ScientificClubofESI/LaraHack 
+cd LaraHack 
 ```
 
 2 - Install the necessary dependencies:
@@ -106,7 +106,7 @@ To customize the decision and confirmation emails for your event, edit email tem
 
 Do you have a feature request, bug report, or patch? Great! See
 [CONTRIBUTING.md][contribute] for information on what you can do about that.
-Contributions to EasyHack are welcome and appreciated !
+Contributions to LaraHack are welcome and appreciated !
 
 # Feedback / Questions 
 
@@ -116,7 +116,7 @@ If you have any questions about this software, please contact ha_zellat@esi.dz.
 
 Copyright (c) 2019 Scienitif Club Of ESI (https://github.com/ScientificClubofESI). Released under AGPLv3. See [`LICENSE`][license] for details.
 
-[contribute]: https://github.com/ScientificClubofESI/EasyHack/blob/master/CONTRIBUTING.md
-[license]: https://github.com/ScientificClubofESI/EasyHack/blob/master/LICENSE
+[contribute]: https://github.com/ScientificClubofESI/LaraHack/blob/master/CONTRIBUTING.md
+[license]: https://github.com/ScientificClubofESI/LaraHack/blob/master/LICENSE
 
 	
