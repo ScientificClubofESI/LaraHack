@@ -71,10 +71,14 @@ cp .env .env.example
 php artisan key:generate  
 ```
 
-4 - Migrate the database , start listening a queue and run the server (The 2 last in different terminals): 
+4 - Migrate the database and start listening a queue in different terminal :
 ```bash
 php artisan migrate 
 php artisan queue:listen database 
+```
+
+5 - Finally run the server :
+```bash
 php artisan serve
 ```
 
