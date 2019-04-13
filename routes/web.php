@@ -52,8 +52,8 @@ Route::group( ['middleware' => 'auth'], function() {
 
     Route::get('/admin', 'Admin\HomeController@index')->name('main');
 
-    Route::get('/admin/hackers', 'Admin\ManageUserController@index')->name('hackers');
-    Route::post('/admin/hackers/{hacker}', 'Admin\ManageUserController@update')->name('setDecision');
+    Route::get('/admin/hackers', 'Admin\ManageHackersController@index')->name('hackers');
+    Route::post('/admin/hackers/{hacker}', 'Admin\ManageHackersController@update')->name('setDecision');
 
     Route::get('/admin/hackers/checkin', 'Admin\CheckinController@index')->name('checkin');
     Route::post('/admin/hackers/checkin/{hacker}', 'Admin\CheckinController@update')->name('checkHacker');
