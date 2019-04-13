@@ -1,8 +1,8 @@
-@extends('layouts.dashboard.app') 
+@extends('layouts.dashboard.app')
 @section('styles')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/checkbox.min.css">
 @endsection
- 
+
 @section('content')
 <div class="container pt-3 pb-7">
     <div class="row justify-content-center">
@@ -48,9 +48,7 @@
 <!-- Update Settings JS -->
 <script>
     'use strict';
-        const token = '{{csrf_token()}}';
-        const route = "{{route('updateSettings')}}";
-
+    const token = '{{csrf_token()}}';
 </script>
 <script src="{{asset('js/dashboard/update-settings.js')}}"></script>
 
