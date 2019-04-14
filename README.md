@@ -1,12 +1,14 @@
 <img src="https://raw.githubusercontent.com/ScientificClubofESI/LaraHack/master/Screenshots/LaraHackLogo.png" alt="LaraHack banner">
 
 **LaraHack** is a complete administration systems designed especially for hackathons and similar competitions .
+
 For participants , it's a clean and simple to submit application with or without team and confirm attendance .
+
 For Organizers , it's an easy way to create your hackathon website , view registrations , analyze statistics , Check-In and much more ! 
 
 # Features 
 
-- **WebSite Template** : LaraHack has a website template that contains all necessary sections ( About , Challenges , Sponsors .. ) with a clean code so you can modify and customize it . 
+- **WebSite Template** : LaraHack has a website template that contains all necessary sections ( About,Challenges,Sponsors.. ) with a clean code so you can modify and customize it . 
 
 - **Registration** : With LaraHack hackers can register easily with or without a team through a register view that is similar to TypeForm and also.
 
@@ -65,16 +67,20 @@ cd LaraHack
 composer install  
 ```
 
-3 - Create your `.env` file from `.env.example` and generate an app key (Don't forget to configure it with the database, and your email , if the host is googlemail so let mail driver , host and port as it was in env.example ; else you should change them ) :
+3 - Create your `.env` file from `.env.example` and generate an app key ( Don't forget to configure it with the database, and your email , if the host is googlemail so let mail driver , host and port as it was in env.example ) :
 ```bash
 cp .env .env.example
 php artisan key:generate  
 ```
 
-4 - Migrate the database , start listening a queue and run the server (The 2 last in different terminals): 
+4 - Migrate the database and start listening a queue in different terminal :
 ```bash
 php artisan migrate 
 php artisan queue:listen database 
+```
+
+5 - Finally run the server :
+```bash
 php artisan serve
 ```
 
@@ -114,7 +120,7 @@ If you have any questions about this software, please contact ha_zellat@esi.dz o
 
 # License 
 
-Copyright (c) 2019 Scienitif Club Of ESI (https://github.com/ScientificClubofESI). Released under AGPLv3. See [`LICENSE`][license] for details.
+Copyright (c) 2019 Scientific Club Of ESI (https://github.com/ScientificClubofESI). Released under AGPLv3. See [`LICENSE`][license] for details.
 
 [contribute]: https://github.com/ScientificClubofESI/LaraHack/blob/master/CONTRIBUTING.md
 [license]: https://github.com/ScientificClubofESI/LaraHack/blob/master/LICENSE

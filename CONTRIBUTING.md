@@ -3,7 +3,7 @@ Contributing
 
 All kinds of contributions to LaraHack are greatly appreciated. For someone
 unfamiliar with the code base, the most efficient way to contribute is usually
-to submit a feature request or bug report
+to submit a feature request , bug report or working on our [tasks list](#tasks-list)
 
 If you want to dive into the source code, you can submit a [patch](#patches) as
 well. Working on [existing issues][issues] is super helpful!
@@ -48,7 +48,7 @@ describing what you intend to work on.
 
 Any changes to the code base should follow the style and coding conventions
 used in the rest of the project. The version history should be clean, and
-commit messages should be descriptive and properly formatted.
+commit messages should be descriptive .
 
 
 Tasks List
@@ -57,6 +57,8 @@ Tasks List
 - [ ] Add Quick deploy to Heroku 
 - [ ] Add multiple admins with different access
 - [ ] Add more settings 
+- [ ] Send Custom mails
+- [ ] Add CTF Platform
 - [ ] Add explore teams ( Join other incomplete teams )
 
 ---
