@@ -27,8 +27,7 @@ Route::post('/store', 'Hacker\RegisterController@store')->name('store');
 
 Route::post('/check', 'Hacker\TeamController@show')->name('check');
 
-Route::get('/register/confirm/{token}','Hacker\TeamController@update')->name('confirm');
-
+Route::get('/register/confirm/{token}','Hacker\RegisterController@update')->name('confirm');
 /**
  * Admin login , logout routes
  */

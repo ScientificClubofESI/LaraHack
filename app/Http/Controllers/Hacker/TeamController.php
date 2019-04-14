@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Hacker;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CheckCodeRequest;
 
 class TeamController extends Controller
 {
