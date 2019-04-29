@@ -15,27 +15,24 @@
  * Main view
  */
 
-Route::get('/', function (){
-    return view('main');
-})->name('home');
+Route::view('/', 'main')->name('home');
 
 /**
  * Registration and confirmation routes
  */
 
-Route::get('/register', 'HackerController@create')->name('register');
+Route::get('/register', 'Hacker\RegisterController@create')->name('register');
 
-Route::post('/store', 'HackerController@store')->name('store');
+Route::post('/store', 'Hacker\RegisterController@store')->name('store');
 
-Route::post('/check', 'HackerController@checkCode')->name('check');
+Route::post('/check', 'Hacker\TeamController@show')->name('check');
 
-Route::get('/register/confirm/{token}','ConfirmationsController@confirmHacker')->name('confirm');
-
+Route::get('/register/confirm/{token}','Hacker\RegisterController@update')->name('confirm');
 /**
  * Admin login , logout routes
  */
 
-Route::get('/admin/login','Auth\LoginController@showForm')->name('login') ; 
+Route::get('/admin/login','Auth\LoginController@showForm')->name('login') ;
 
 Route::post('/admin/login','Auth\LoginController@login')->name('authenticate');
 
@@ -50,23 +47,21 @@ Route::post('/admin/logout', 'Auth\LoginController@logout')->name('logout');
  *      Consulting some statistics about hackers
  */
 
-Route::get('/admin','AdminController@index')->name('main')->middleware('auth');
+Route::group( ['middleware' => 'auth'], function() {
 
-Route::get('/admin/hackers','AdminController@hackers')->name('hackers')->middleware('auth');
+    Route::get('/admin', 'Admin\HomeController@index')->name('main');
 
-Route::post('/admin/setDecision','AdminController@setDecision')->name('setDecision')->middleware('auth');
+    Route::get('/admin/hackers', 'Admin\ManageHackersController@index')->name('hackers');
+    Route::post('/admin/hackers/{hacker}', 'Admin\ManageHackersController@update')->name('setDecision');
 
-Route::get('/admin/checkin','AdminController@checkin')->name('checkin')->middleware('auth');
+    Route::get('/admin/hackers/checkin', 'Admin\CheckinController@index')->name('checkin');
+    Route::post('/admin/hackers/checkin/{hacker}', 'Admin\CheckinController@update')->name('checkHacker');
 
-Route::post('/admin/checkHacker','AdminController@checkHacker')->name('checkHacker')->middleware('auth');
+    Route::get('/admin/mailing', 'Admin\MailingController@index')->name('mailing');
+    Route::post('/admin/mailing', 'Admin\MailingController@send')->name('sendMail');
 
-Route::get('/admin/mailing','AdminController@mailing')->name('mailing')->middleware('auth');
+    Route::get('/admin/settings', 'Admin\SettingsController@index')->name('settings');
+    Route::post('/admin/settings/{settings}', 'Admin\SettingsController@update')->name('updateSettings');
 
-Route::post('/admin/sendMails','MailingController@mailHandler')->name('sendMail')->middleware('auth');
-
-Route::get('/admin/settings','SettingsController@index')->name('settings')->middleware('auth');
-
-Route::post('/admin/setSettings','SettingsController@update')->name('updateSettings')->middleware('auth');
-
-Route::get('/admin/statistics','AdminController@statistics')->name('statistics')->middleware('auth');
-
+    Route::get('/admin/statistics', 'Admin\StatisticsController@index')->name('statistics');
+});

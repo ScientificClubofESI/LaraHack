@@ -106,7 +106,7 @@
             </div>
         </div>
     </div>
-    
+
 @endsection
 @push('js')
     <!-- DataTable Scripts -->
@@ -124,7 +124,6 @@
     <!-- Set Decision Script -->
     <script type="text/javascript">
         const token = '{{csrf_token()}}';
-        const route = "{{route('setDecision')}}";
     </script>
     <script src="{{asset('js/dashboard/set-decision.js')}}"></script>
 

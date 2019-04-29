@@ -76,7 +76,6 @@
     <!-- Check-In Hacker -->
     <script type="text/javascript">
         const token = '{{csrf_token()}}';
-        const route = "{{route('checkHacker')}}" ;
     </script>
     <script src="{{asset('js/dashboard/check-hacker.js')}}"></script>
 

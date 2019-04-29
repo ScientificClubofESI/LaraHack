@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Settings;
 use Illuminate\Http\Request;
 use Spatie\Valuestore\Valuestore;
-
+use App\Http\Controllers\Controller;
 
 class SettingsController extends Controller
 {
@@ -26,12 +26,10 @@ class SettingsController extends Controller
      * Update the current settings
      * @return \Illuminate\Http\JsonResponse
      */
-    public function update(Request $request, Settings $settings)
+    public function update(Request $request, Settings $settings, $registrationMode)
     {
+
         try {
-
-            $registrationMode = json_decode($request->getContent())->registration_mode;
-
             $settings->put('registration_mode', $registrationMode);
 
             return response()->json([
@@ -42,6 +40,4 @@ class SettingsController extends Controller
             throw $err;
         }
     }
-
-
 }
