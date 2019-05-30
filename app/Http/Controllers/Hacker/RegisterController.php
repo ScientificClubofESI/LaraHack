@@ -1,23 +1,20 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Hacker;
 
-use App\Hacker;
-use App\Http\Requests\CheckCodeRequest;
-use App\Http\Requests\RegistrationRequest;
-use App\Http\Requests\SetDecisionRequest;
-use App\Mail\Registred;
 use App\Team;
+use App\Hacker;
+use Carbon\Carbon;
+use App\Mail\Registred;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Mail;
 use Spatie\Valuestore\Valuestore;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Crypt;
+use App\Http\Requests\RegistrationRequest;
 
-
-class HackerController extends Controller
+class RegisterController extends Controller
 {
-
-
     /**
      * Show the registration page
      *
@@ -28,7 +25,7 @@ class HackerController extends Controller
         $settings = Valuestore::make(storage_path('app/settings.json'));
         if ($settings->get('registration_mode') == 'open') {
             return view('registration.register');
-        } else { 
+        } else {
             return view('registration.closed');
         }
     }
@@ -80,7 +77,7 @@ class HackerController extends Controller
             else {// Else, the hacker have no team
                 $hacker->save();
                 Mail::to($hacker)->send(new Registred($hacker));
-                return response()->json(['success' => 'Registration done' , 'created' => true ] ,201);     
+                return response()->json(['success' => 'Registration done' , 'created' => true ] ,201);
             }
 
         }
@@ -92,20 +89,30 @@ class HackerController extends Controller
 
     }
 
-    /**
-     * @param Request $request
-     * Check if the code is correct , returning the id and the name if correct
-     * @return false|string
-     */
-    public function checkCode(CheckCodeRequest $request)
+    function update(Request $request)
     {
-        $code = $request->request->get('teamCode');
-        $team = DB::table('teams')->where('code', '=', $code)->first();
-        if ($team != null) return json_encode(['id' => $team->id, 'team_name' => $team->name]);
-        else return json_encode(['error' => 'your code is not valid']);
+        $decrypted = Crypt::decrypt($request->token);
+        preg_match_all('!\d+!', $decrypted, $id);
+        $id=$id[0][0];
+        $hacker = Hacker::find( (int) $id);
+        $now = Carbon::now();
+        $limit = 2 ;
+        $recieved_date = Carbon::parse($hacker->accepted_email_received_at)->addDays($limit) ;
+        if ($hacker != null){
+            if($recieved_date->lt($now)) {
+                $hacker->reject();
+                $hacker->save();
+                return view('registration.expire');
+            } else {
+                $hacker->confirmAttendance();
+                $hacker->save();
+                $result = true;
+            }
+        }
+        else{
+            $result = false;
+        }
+            return view('registration.confirmation',['result'=>$result]);
     }
-
-
-
 
 }

@@ -9,7 +9,7 @@
             $.ajax({
                 headers: {'X-CSRF-TOKEN': token},
                 type: "POST",
-                url: route,
+                url: `/admin/hackers/${member_id}`,
                 dataType: 'json',
                 data: formData,
                 contentType: false,

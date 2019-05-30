@@ -23,14 +23,16 @@ class Hacker extends Model
         "decision",
     ];
 
-    public function team(){
-        if ($this->hasTeam()) return $this->belongsTo('App\team');
-        else return null;
+    public $dates = ['accepted_email_received_at'];
+
+    public function team()
+    {
+        return $this->belongsTo(Team::class);
     }
 
-    public function hasTeam(){
-        if ($this->team_id!=null) return true;
-        else return false;
+    public function hasTeam()
+    {
+        return (bool) ! is_null($this->team);
     }
 
     public function confirmAttendance(){
