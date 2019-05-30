@@ -84,6 +84,33 @@ php artisan queue:listen database
 php artisan serve
 ```
 
+### Deploy Using Docker 
+
+Getting a local instance of LaraHack up and running is very quickly using docker-compose
+
+1 - Clone the repository and cd to the project folder:
+```bash
+$ git clone https://github.com/ScientificClubofESI/LaraHack 
+cd LaraHack 
+```
+
+2 - Mount the app directory and install the dependencies:
+```bash
+$ sudo chown -R $USER:$USER 'LocalAppPath'
+'LocalAppPath' ex: ~/LaraHack
+```
+
+
+3 - Mount the app directory and install the dependencies:
+```bash
+$ docker run --rm -v $(pwd):/app composer install
+```
+
+4 - Build the app image and run the services:
+```bash
+$ docker-compose up -d
+```
+
 # Customizing for your event 
 
 ### Hackathon name 
