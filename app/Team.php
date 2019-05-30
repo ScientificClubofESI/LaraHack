@@ -12,7 +12,8 @@ class Team extends Model
         "code"
     ];
 
-    public function hackers(){
-        return $this->hasMany('App\Hacker');
+    public function hackers()
+    {
+        return $this->hasMany(Hacker::class);
     }
 }

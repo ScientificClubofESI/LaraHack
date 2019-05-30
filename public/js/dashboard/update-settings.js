@@ -7,23 +7,22 @@
          swal({
              title : "Are you sure to Update Settings ?" ,
              icon :"warning" ,
-             buttons : true , 
-         }) 
-         .then((willUpdate) => { 
+             buttons : true ,
+         })
+         .then((willUpdate) => {
              if (willUpdate) {
                 $.ajax({
                 headers:{'X-CSRF-TOKEN': token},
                 type:"POST",
-                url: route,
+                url: `/admin/settings/${registrationMode}`,
                 dataType:'json',
-                data: JSON.stringify({ registration_mode : registrationMode}),
                 contentType:false,
                 processData:false,
                 beforeSend: function () {
                 },
                 success: function (json) {
                     //set the changes
-                    if (json.response) {                        
+                    if (json.response) {
                     }
                     swal ( "Done !" ,  "Settings Updated Sucessefully" ,  "success" );
                 },
@@ -40,5 +39,5 @@
                 swal("You havn't updated any setting !");
              }
          })
-       
+
      }
