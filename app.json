@@ -1,0 +1,39 @@
+{
+	"name": "LaraHack",
+	"description": "Administration system for hackathons",
+	"repository": "https://github.com/AbdelkhalekESI/LaraHack",
+	"logo": "https://raw.githubusercontent.com/ScientificClubofESI/LaraHack/master/Screenshots/LaraHackLogo.png",
+	"env": {
+		"APP_NAME": {
+			"description": "Hackathon name",
+			"value": "HackIT"
+		},
+		"APP_KEY": {
+			"generator": "secret"
+		},
+		"ADMIN_EMAIL": {
+			"description": "Default admin mail at app initialization",
+			"value": "cse@esi.dz"
+		},
+		"ADMIN_PASS": {
+            "description": "Default admin password at app initialization",
+			"value": "cseisgreat"
+        },
+		"QUEUE_CONNECTION": {
+			"description": "Used to send mails in the background ",
+			"value": "database"
+		},
+		"QUEUE_DRIVER": {
+			"description": "Used to send mails in the background ",
+			"value": "database"
+		},
+		"MAIL_DRIVER": "smtp",
+		"MAIL_HOST": "smtp.gmail.com",
+		"MAIL_USERNAME": "foo@bar.com",
+		"MAIL_PASSWORD": "password",
+		"MAIL_PORT": "465",
+		"MAIL_ENCRYPTION": "ssl"
+	},
+	"addons": [ "cleardb" ],
+	"keywords": [ "larahack" , "laravel", "php", "mysql" ]
+}

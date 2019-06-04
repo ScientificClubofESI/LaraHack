@@ -16,8 +16,8 @@ class AddAdmin extends Migration
         DB::table('users')->insert(
             array(
                 'name'=>'Admin',
-                'email' => 'admin@cse.dz',
-                'password' => bcrypt('cse')
+                'email' => env('ADMIN_EMAIL', 'admin@cse.dz'),
+                'password' => bcrypt(env('ADMIN_PASS', 'cseisgreat'))
             )
         );
     }

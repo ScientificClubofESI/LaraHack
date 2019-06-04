@@ -4,7 +4,7 @@
 
 For participants , it's a clean and simple to submit application with or without team and confirm attendance .
 
-For Organizers , it's an easy way to create your hackathon website , view registrations , analyze statistics , Check-In and much more ! 
+For Organizers , it's an easy way to create your hackathon website , view registrations , analyze statistics , Check-In and easy to deploy it ! 
 
 # Features 
 
@@ -33,6 +33,7 @@ For Organizers , it's an easy way to create your hackathon website , view regist
 # Setup 
 
 ### Quick deploy with Heroku 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 ### Requirements 
 | Requirement                                 | Version |
