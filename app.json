@@ -1,0 +1,7 @@
+{
+  "name": "LaraHack",
+  "description": "Administration system for hackathons",
+  "repository": "https://github.com/AbdelkhalekESI/LaraHack",
+  "logo": "https://raw.githubusercontent.com/ScientificClubofESI/LaraHack/master/Screenshots/LaraHackLogo.png",
+  "keywords": ["laravel", "php", "mysql"]
+}
