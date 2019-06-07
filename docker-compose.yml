@@ -3,10 +3,8 @@ services:
 
   #PHP Service
   app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: digitalocean.com/php
+    build: .
+    image: larahack:0.1
     container_name: app
     restart: unless-stopped
     tty: true

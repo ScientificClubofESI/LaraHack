@@ -88,13 +88,13 @@ php artisan serve
 
 Getting a local instance of LaraHack up and running is very quickly using docker-compose
 
-1 - Clone the repository and cd to the project folder:
+1 - Clone the repository and cd to the app folder:
 ```bash
 $ git clone https://github.com/ScientificClubofESI/LaraHack 
 cd LaraHack 
 ```
 
-2 - Mount the app directory and install the dependencies:
+2 - Change the ownership of the app:
 ```bash
 $ sudo chown -R $USER:$USER 'LocalAppPath'
 'LocalAppPath' ex: ~/LaraHack

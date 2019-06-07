@@ -36,6 +36,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 COPY . /var/www
 
 RUN chmod 777 -R storage
+RUN chmod 777 storage/app/settings.json
 
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000
