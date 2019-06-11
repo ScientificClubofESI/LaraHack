@@ -96,7 +96,7 @@ cd LaraHack
 
 2 - Change the ownership of the app:
 ```bash
-$ sudo chown -R $USER:$USER 'LocalAppPath'
+$ sudo chown -R www-data:www-data 'LocalAppPath'
 'LocalAppPath' ex: ~/LaraHack
 ```
 
