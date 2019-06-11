@@ -4,7 +4,7 @@
 
 For participants , it's a clean and simple to submit application with or without team and confirm attendance .
 
-For Organizers , it's an easy way to create your hackathon website , view registrations , analyze statistics , Check-In and easy to deploy it ! 
+For Organizers , it's an easy way to create your hackathon website , view registrations , analyze statistics , Check-In and much more ! 
 
 # Features 
 
@@ -33,7 +33,6 @@ For Organizers , it's an easy way to create your hackathon website , view regist
 # Setup 
 
 ### Quick deploy with Heroku 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 ### Requirements 
 | Requirement                                 | Version |
@@ -65,7 +64,7 @@ cd LaraHack
 
 2 - Install the necessary dependencies:
 ```bash
-composer install  
+composer install
 ```
 
 3 - Create your `.env` file from `.env.example` and generate an app key ( Don't forget to configure it with the database, and your email , if the host is googlemail so let mail driver , host and port as it was in env.example ) :
@@ -83,6 +82,37 @@ php artisan queue:listen database
 5 - Finally run the server :
 ```bash
 php artisan serve
+```
+
+### Deploy Using Docker 
+
+Getting a local instance of LaraHack up and running is very quickly using docker-compose
+
+1 - Clone the repository and cd to the app folder:
+```bash
+$ git clone https://github.com/ScientificClubofESI/LaraHack 
+cd LaraHack 
+```
+
+2 - Change the ownership of the app:
+```bash
+$ sudo chown -R $USER:$USER 'LocalAppPath'
+'LocalAppPath' ex: ~/LaraHack
+```
+
+3 - copy the config file:
+```bash
+$ cp .env.example.docker .env
+```
+
+4 - Mount the app directory and install the dependencies:
+```bash
+$ docker run --rm -v $(pwd):/app composer install --no-dev
+```
+
+5 - Build the app image and run the services:
+```bash
+$ docker-compose up -d
 ```
 
 # Customizing for your event 
