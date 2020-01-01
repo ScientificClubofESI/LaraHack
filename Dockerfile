@@ -9,7 +9,7 @@ WORKDIR /var/www
 # Install dependencies
 RUN apt-get update && apt-get install -y \
     build-essential \
-    mysql-client \
+    default-mysql-client \
     libpng-dev \
     libjpeg62-turbo-dev \
     libfreetype6-dev \
@@ -36,6 +36,8 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 COPY . /var/www
 
 RUN chown -R www-data:www-data /var/www
+RUN chmod -R 777 /var/www/storage
+RUN chmod u+x /var/www/deploy.sh
 
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000
