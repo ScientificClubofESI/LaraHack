@@ -33,6 +33,8 @@ For Organizers , it's an easy way to create your hackathon website , view regist
 # Setup 
 
 ### Quick deploy with Heroku 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ScientificClubofESI/LaraHack)
+
 
 ### Requirements 
 | Requirement                                 | Version |
