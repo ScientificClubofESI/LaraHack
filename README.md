@@ -1,3 +1,8 @@
+
+## We are looking for maintainers!
+In order to ensure active development going forward, we are looking for maintainers to join the project. [Please contact the project owner if you are interested.](mailto:ha_zellat@esi.dz) and see [CONTRIBUTING.md][contribute] for information on what you can do about that.
+
+
 <img src="https://raw.githubusercontent.com/ScientificClubofESI/LaraHack/master/Screenshots/LaraHackLogo.png" alt="LaraHack banner">
 
 **LaraHack** is a complete administration systems designed especially for hackathons and similar competitions .
