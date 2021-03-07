@@ -76,7 +76,7 @@ composer install
 
 3 - Create your `.env` file from `.env.example` and generate an app key ( Don't forget to configure it with the database, and your email , if the host is googlemail so let mail driver , host and port as it was in env.example ) :
 ```bash
-cp .env .env.example
+cp .env.example .env 
 php artisan key:generate  
 ```
 
